@@ -19,10 +19,16 @@
             background: white;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            position: relative;
         }
         .logo img {
             width: 160px;
             height: auto;
+        }
+        .language-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
         }
         .grid {
             display: grid;
@@ -36,8 +42,9 @@
             color: black;
         }
         .grid img {
-            width: 100%;
-            max-width: 140px;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
             border-radius: 8px;
             transition: transform 0.3s ease;
         }
@@ -73,21 +80,20 @@
             color: white;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <form action="https://toledohotel.github.io/Toledo-Hotel/arab.html" method="get" class="language-btn">
+            <button type="submit" class="btn">عربـــي</button>
+        </form>
+        
         <div class="logo">
             <a href="https://toledohotel.jo">
                 <img src="logo.png" alt="Toledo Hotel Logo">
             </a>
         </div>
-        
-        <form action="https://toledohotel.github.io/Toledo-Hotel/arab.html" method="get">
-            <button type="submit" class="btn">عربـــي</button>
-        </form>
         
         <div class="grid">
             <a href="https://sites.google.com/view/toledohotelservices">
