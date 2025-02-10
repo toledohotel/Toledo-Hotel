@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>فندق طليطلة</title>
+    <title>فندق توليدو</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
@@ -12,19 +12,18 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            direction: rtl;
         }
         .container {
-            width: 100%;
-            max-width: 480px;
-            padding: 15px;
+            max-width: 100%;
+            padding: 20px;
             background: white;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            margin: auto;
             position: relative;
         }
         .logo img {
-            width: 120px;
+            width: 160px;
             height: auto;
         }
         .language-btn {
@@ -35,98 +34,110 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            padding: 10px;
+            gap: 20px;
+            padding: 15px;
+            justify-content: center;
         }
         .grid a {
             text-decoration: none;
             color: black;
-            font-size: 14px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
         .grid img {
-            width: 100%;
-            max-width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 12px;
             transition: transform 0.3s ease;
         }
         .grid img:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
         .marquee {
             background: linear-gradient(45deg, #ff416c, #ff4b2b);
             color: white;
-            padding: 10px;
-            font-size: 16px;
+            padding: 12px;
+            font-size: 18px;
             font-weight: bold;
             border-radius: 8px;
-            margin-top: 10px;
-            font-family: 'Cairo', sans-serif;
+            margin-top: 15px;
         }
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
+            gap: 15px;
+            margin-top: 15px;
         }
         .social-icons a {
-            font-size: 20px;
+            font-size: 24px;
             color: #555;
             transition: color 0.3s;
         }
         .social-icons a:hover {
             color: #007BFF;
         }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background: #007BFF;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <form action="https://toledohotel.github.io/Toledo-Hotel/Toledo%20Amman%20Hotel2021.html" method="get" class="language-btn">
+        <form action="https://toledohotel.github.io/Toledo-Hotel/eng.html" method="get" class="language-btn">
             <button type="submit" class="btn">English</button>
         </form>
         
         <div class="logo">
             <a href="https://toledohotel.jo">
-                <img src="logo.png" alt="شعار فندق طليطلة">
+                <img src="logo.png" alt="شعار فندق توليدو">
             </a>
         </div>
         
         <div class="grid">
-            <a href="https://sites.google.com/view/arabic-services/home">
+            <a href="https://sites.google.com/view/toledohotelservices">
                 <img src="Dirrectory.jpeg" alt="الخدمات">
-                <span>الخدمات</span>
+                <p>الخدمات</p>
             </a>
-            <a href="https://toledohotel.github.io/toledohotel/ToledoMenuArb.html">
-                <img src="Sandwish.jpeg" alt="قائمة الطعام">
-                <span>قائمة الطعام</span>
+            <a href="https://toledohotel.github.io/toledohotel/ToledoMenuAr.html">
+                <img src="Sandwish.jpeg" alt="القائمة">
+                <p>القائمة</p>
             </a>
             <a href="Air Port Menu.html">
                 <img src="Plane1.jpeg" alt="خدمات المطار">
-                <span>خدمات المطار</span>
+                <p>خدمات المطار</p>
             </a>
             <a href="Private Tours Amman2021.html">
-                <img src="Tours.jpeg" alt="جولات سياحية">
-                <span>جولات سياحية</span>
+                <img src="Tours.jpeg" alt="الجولات الخاصة">
+                <p>الجولات الخاصة</p>
             </a>
-            <a href="https://toledohotel.github.io/toledohotel/ToledoLaundryARB.html">
+            <a href="https://toledohotel.github.io/toledohotel/ToledoLaundryAr.html">
                 <img src="Luandry.jpeg" alt="أسعار الغسيل">
-                <span>أسعار الغسيل</span>
+                <p>أسعار الغسيل</p>
             </a>
-            <a href="https://toledohotel.github.io/toledohotel/ToledoMinibarARB.html">
-                <img src="minibar.png" alt="أسعار ثلاجة ميني بار">
-                <span>أسعار ثلاجة ميني بار</span>
+            <a href="https://toledohotel.github.io/toledohotel/ToledoMinibarAR.html">
+                <img src="minibar.png" alt="أسعار الثلاجة الصغيرة">
+                <p>أسعار الثلاجة الصغيرة</p>
+            </a>
+            <a href="save.html">
+                <img src="save.jpg" alt="صندوق الأمانات">
+                <p>صندوق الأمانات</p>
+            </a>
+            <a href="https://toledo3.github.io/toledo-hotel/Guests.html">
+                <img src="Survey.jpeg" alt="استبيان الضيوف">
+                <p>استبيان الضيوف</p>
             </a>
         </div>
         
-        <div class="marquee">🔥 خصم 30% على المصبغة - لفترة محدودة! 🔥</div>
+        <div class="marquee"> خصم 30% على خدمة الغسيل - لفترة محدودة! </div>
         
         <div class="social-icons">
             <a href="https://web.facebook.com/ToledoAmmanHotel" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://twitter.com/toledoamman" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://twitter.com/toledoamman" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="https://www.instagram.com/toledoammanhotel/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.tiktok.com/@toledoammanhotel?lang=en" target="_blank"><i class="fab fa-tiktok"></i></a>
         </div>
