@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('rest.jpg');
+            background-color: #fdf1dc;
+            margin: 0;
+            padding: 0;
+            color: #000;
+            position:initial;
+    
+        }
+        .menu-container {
+            width: 80%;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            text-align: ;
+        }
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            color: navy;
+            margin-bottom: 15px;
+        }
+        h2 {
+            font-size: 22px;
+            color: red;
+            margin-bottom: 5px;
+        }
+        .section-title {
+            color: darkred;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            font-size: 16px;
+        }
+        .menu-item span {
+            flex: 1;
+        }
+        .price {
+            text-align: right;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            font-style: italic;
+        }
+        .description {
+            font-style: italic;
+            font-size: 14px;
+            margin: 0 0 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<div class="menu-container">
+<center><a href="https://toledohotel.jo"><img src="logo.png" width="160" height="55" alt="Toledo Hotel Logo"></a></center>
+<br>
+    <h1>Menu</h1>
+    <h2>Appetizers</h2>
+    <div class="menu-item"><span>Hummos</span><span class="price">1.960</span></div>
+    <div class="menu-item"><span>Mutabal</span><span class="price">1.960</span></div>
+    <div class="menu-item"><span>Tabbouleh</span><span class="price">1.960</span></div>
+    <div class="menu-item"><span>Kubbeh</span><span class="price">2.100</span></div>
+    <div class="menu-item"><span>Assorted Pastries (5 Pieces) "Cheese, Meat, Vegetable, 2 Kubbeh"</span><span class="price">3.300</span></div>
+
+    <h2>Buffet - Breakfast</h2>
+    <div class="menu-item"><span>Buffet - Breakfast</span><span class="price">7.496</span></div>
+
+    <h2>Soup & Salads</h2>
+    <div class="menu-item"><span>Vegetable Soup</span><span class="price">1.990</span></div>
+    <div class="menu-item"><span>Lentil Soup</span><span class="price">1.990</span></div>
+    <div class="menu-item"><span>Chicken Noodle Soup</span><span class="price">1.990</span></div>
+    <div class="menu-item"><span>Mixed Salad</span><span class="price">1.990 </span></div>
+    <div class="menu-item"><span>Caesar Salad</span><span class="price">1.990</span></div>
+
+    <h2>Sandwiches</h2>
+    <p>Sandwiches Below are Served with French Fries</p>
+    <div class="menu-item"><span>Club Sandwich</span><span class="price">5.550 </span></div>
+    <div class="menu-item"><span>Beef Burger/Cheese</span><span class="price">5.550 </span></div>
+    <div class="menu-item"><span>Chicken Burger/Cheese</span><span class="price">5.550 </span></div>
+    <div class="menu-item"><span>French Fries</span><span class="price">2.500 </span></div>
+
+<div class="footer">All above Items Are Subject to Tax & Service Charge</div>
+</div>
+<div class="menu-container">
+    <h2>Main Course</h2>
+    <div class="menu-item"><span>Shish Kebab 250g</span><span class="price">7.550</span></div>
+    <p class="description">"Pieces of leg of veal"</p>
+
+    <div class="menu-item"><span>Shish Tawooq 250g</span><span class="price">6.900 </span></div>
+    <p class="description">"Marinated chicken with garlic & lemon sauce"</p>
+
+    <div class="menu-item"><span>Mixed Grill 250g</span><span class="price">7.990</span></div>
+    <div class="menu-item"><span>Spaghetti Bolognese</span><span class="price">6.900 </span></div>
+    <div class="menu-item"><span>Chicken Fillet</span><span class="price">7.990</span></div>
+    <p class="description">"Served with steamed vegetables & potato"</p>
+
+    <div class="menu-item"><span>Chicken Escalope</span><span class="price">6.900</span></div>
+    <p class="description">"Breaded breast of chicken w/steamed vegetables"</p>
+
+    <div class="menu-item"><span>Chicken Curry</span><span class="price">6.900</span></div>
+    <p class="description">"Served with rice"</p>
+
+    <div class="menu-item"><span>Beef Stroganoff</span><span class="price">7.500</span></div>
+    <p class="description">"Served with rice"</p>
+
+    <div class="menu-item"><span>Fish Curry</span><span class="price">7.699</span></div>
+    <p class="description">"Served with white rice"</p>
+
+    <div class="menu-item"><span>Fish Fillet</span><span class="price">7.990</span></div>
+    <p class="description">"Served with steamed vegetables & potato"</p>
+
+    <div class="menu-item"><span>Garlic Fish Fillet</span><span class="price">7.990</span></div>
+    <p class="description">"Served with white rice & garlic sauce"</p>
+
+    <h2>Pizza</h2>
+    <div class="menu-item"><span>Cheese</span><span class="price">4.591</span></div>
+    <p class="description">"Mozzarella"</p>
+
+    <div class="menu-item"><span>Vegetarian</span><span class="price">4.591</span></div>
+    <p class="description">"Mozzarella, Mushroom, Olives, Bell Pepper, Tomato"</p>
+
+    <div class="menu-item"><span>Salami</span><span class="price">5.291</span></div>
+    <p class="description">"Mozzarella, Salami, Mushroom, Tomato"</p>
+
+    <div class="menu-item"><span>Chicken</span><span class="price">5.291</span></div>
+    <p class="description">"Mozzarella, Chicken Breast, Olives, Bell Pepper, Tomato"</p>
+
+    <div class="menu-item"><span>Beef</span><span class="price">5.291</span></div>
+    <p class="description">"Mozzarella, Salami, Beef, Mushroom, Olives, Bell Pepper, Tomato"</p>
+
+    <div class="footer">All above Items Are Subject to Tax & Service Charge</div>
+</div>
+<div class="menu-container">
+    <h2>Pizza</h2>
+    <div class="menu-item"><span>Cheese</span><span class="price">4.591</span></div>
+    <p class="description">"Mozzarella"</p>
+
+    <div class="menu-item"><span>Vegetarian</span><span class="price">4.591 </span></div>
+    <p class="description">“Mozzarella, Mushroom, Olives, Bell Pepper, Tomato”</p>
+
+    <div class="menu-item"><span>Salami </span><span class="price">5.291</span></div>
+    <p class="description">"Mozzarella, Salami, Mushroom, Tomato”</p>
+
+    <div class="menu-item"><span>Chicken</span><span class="price">5.291 </span></div>
+    <p class="description">“Mozzarella, Chicken Breast, Olives, Bell Pepper, Tomato”</p>
+    <div class="menu-item"><span>Beef</span><span class="price">5.291</span></div>
+    <p class="description">“Mozzarella, Salami, Beef, Mushroom, Olives, Bell Pepper, Tomato”</p>
+    <h2>Dessert</h2>
+    <div class="menu-item"><span>Cream Caramel</span><span class="price">2.100</span></div>
+    <div class="menu-item"><span>Chocolate Mousse</span><span class="price">2.100</span></div>
+    <p class="description">"With fresh cream & syrup"</p>
+    <div class="menu-item"><span>Ice Cream</span><span class="price">3.150</span></div>
+    <p class="description">"Assorted or Arabic"</p>
+    <div class="menu-item"><span>Black or White Forest Cake </span><span class="price">3.150</span></div>
+    <div class="menu-item"><span>Apple Pie With Ice Cream</span><span class="price">3.150</span></div>
+
+<h2>Beverage</h2>
+    <div class="menu-item"><span>Soft Drinks</span><span class="price">1.543</span></div>
+    <p class="description">"All flavors" </p>
+    <div class="menu-item"><span>Juice</span><span class="price">1.675</span></div>
+    <p class="description">"Mango, Guava, Pineapple, Apple or Orange" </p>
+    <div class="menu-item"><span>Sparkling Water</span><span class="price">1.675</span></div>
+    <div class="menu-item"><span>Fresh Orange Juice</span><span class="price">3.527</span></div>
+    <div class="menu-item"><span>Fresh Lemon Juice</span><span class="price">3.527</span></div>
+    <div class="menu-item"><span>Andalusian Cocktail</span><span class="price">3.527</span></div>
+    <p class="description">"Strawberry, Mango, Banana"  </p>
+    <div class="menu-item"><span>Nescafe</span><span class="price">2.190</span></div>
+    <div class="menu-item"><span>Turkish Coffee</span><span class="price">2.190</span></div>
+    <div class="menu-item"><span>Tea</span><span class="price">2.190</span></div>
+    <p class="description">"Mint or Lemon"</p>
+<div class="menu-item"><span>Mixed Herbs </span><span class="price">2.190</span></div>
+<div class="menu-item"><span>Hot Chocolate</span><span class="price">2.646</span></div>
+<div class="menu-item"><span>Espresso Coffee</span><span class="price">2.646</span></div>
+<div class="menu-item"><span>Cappuccino</span><span class="price">2.646</span></div>
+<div class="menu-item"><span>Small Mineral Water</span><span class="price">0.662</span></div>
+<div class="menu-item"><span>Mineral Water</span><span class="price">1.764</span></div>
+<div class="footer">All above Items Are Subject to Tax & Service Charge</div>
+</div>
+
+<center>
+<table border="0">
+         <font size="4" face=" " color="black">
+       <tr>
+      <td colspan="2" align="center">For service please dial (4)</a></td>
+      </tr>
+    <tr>
+
+    <form> 
+
+      <td align="right"><input type="button" onclick="window.location.href='https://toledohotel.github.io/Toledo-Hotel/Toledo%20Amman%20Hotel2021.html';" value="Main Page"</td>
+    <td align="left"><input type="button" onclick="window.location.href='';" value="Order Now"</td>
+      </tr>
+</center>
+</body>
+</html>
