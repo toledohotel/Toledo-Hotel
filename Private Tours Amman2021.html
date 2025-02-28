@@ -6,41 +6,69 @@
     <title>Private Tours</title>
     <style>
         body {
-            background-image: url('privatetour.jpg'); /* Replace with actual background image URL */
-            background-size: cover;
-            background-position: ;
-            font-family: times new roman, sans-serif;
+            font-family: Arial, sans-serif;
+            background-image: url('privatetour.jpg');
+            background-color: #fdf1dc;
+            margin: 0;
+            padding: 0;
+            color: #000;
+            position:initial;
+    
+        }
+        .menu-container {
+            width: 80%;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            text-align: ;
+        }
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            color: navy;
+            margin-bottom: 15px;
+        }
+        h2 {
+            font-size: 22px;
+            color: red;
+            margin-bottom: 5px;
+        }
+        .section-title {
+            color: darkred;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            font-size: 16px;
             text-align:;
         }
-        .container {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            width: 80%;
-            margin: 50px auto;
-            border-radius: 10px;
+        .menu-item span {
+            flex: 1;
+            text-align:;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            margin: auto;
-            border-radius: 10px;
-            overflow: hidden;
-
-
-        }
-        th, td {
-            border: 1px dotted black;
-            padding: 10px;
+        .price {
             text-align: center;
+            font-weight: bold;
         }
-        th {
-            background-color: #1e365d;
-            color: white;
-        }
-        .note {
+        .footer {
+            text-align: center;
             margin-top: 20px;
             font-size: 14px;
+            font-style: italic;
+        }
+        .description {
+            font-style: italic;
+            font-size: 14px;
+            margin: 0 0 5px 0;
+            color: #555;
         }
         .buttons {
             margin-top: 20px;
@@ -56,43 +84,43 @@
     </style>
 </head>
 <body>
-   <div class="container">
-<center>
-    <a href="https://toledohotel.jo">
-        <img src="logo.png" width="160" height="55" alt="Toledo Hotel Logo">
-    </a>
-       <h2>Private Tours</h2></center>
-        <table>
-            <tr>
-                <th>TOUR</th>
-                <th>CAR (JOD)</th>
-                <th>VAN (JOD)</th>
-                <th>EST.TIME</th>
-            </tr>
-            <tr><td>Petra (Desert Highway)</td><td>105</td><td>150</td><td>12 Hours</td></tr>
-            <tr><td>Madaba/Mount Nebo/Dead Sea/Baptism site</td><td>90</td><td>115</td><td>9 Hours</td></tr>
-            <tr><td>Jerash & Ajlun</td><td>80</td><td>110</td><td>7 Hours</td></tr>
-            <tr><td>Um Qays</td><td>90</td><td>115</td><td>7 Hours</td></tr>
-            <tr><td>Um Qays/Jerash & Ajlun</td><td>100</td><td>150</td><td>12 Hours</td></tr>
-            <tr><td>Dead Sea</td><td>60</td><td>90</td><td>5 Hours</td></tr>
-            <tr><td>Desert Castles</td><td>85</td><td>105</td><td>7 Hours</td></tr>
-            <tr><td>Hammamat Ma’in (Hot Springs)</td><td>60</td><td>90</td><td>6 Hours</td></tr>
-            <tr><td>Wadi Rum</td><td>160</td><td>220</td><td>12 Hours</td></tr>
-            <tr><td>Aqaba (One Way)</td><td>115</td><td>165</td><td>1 Way</td></tr>
-            <tr><td>Aqaba (Two Ways)</td><td>165</td><td>225</td><td>2 Ways</td></tr>
-            <tr><td>Amman Tour</td><td>50</td><td>70</td><td>4 Hours</td></tr>
-        </table>
-        <dl>
-        <dd>- Rates above are in JOD.</dd>
-        <dd>- Site entry fees and tips are not included.</dd>
-        <dd>- Please add JD 10.00 for each additional hour.</dd>
-        </dl>
+<div class="menu-container">
+<center><a href="https://toledohotel.jo"><img src="logo.png" width="160" height="55" alt="Toledo Hotel Logo"></a></center>
+<br>
+    <h1>Private Tours</h1>
+<div class="menu-item"><span><b> TOUR</b></span><span class="menu-item"><b>CAR</b></span><span class="menu-item"><b>VAN</b></span><span class="menu-item"><b>EST.TIME</b></span></div>
+<div class="menu-item"><span>Petra (Desert Highway)</span><span class="menu-item">105</span><span class="menu-item">150</span><span class="menu-item">12 Hours</span></div>
+<div class="menu-item"><span>Madaba/Mount Nebo/Dead Sea/Baptism site</span><span class="menu-item">90</span><span class="menu-item">115</span><span class="menu-item">9 Hours</span></div>
+<div class="menu-item"><span>Jerash & Ajlun</span><span class="menu-item">80</span><span class="menu-item">110</span><span class="menu-item">7 Hours</span></div>
+<div class="menu-item"><span>Um Qays</span><span class="menu-item">90</span><span class="menu-item">115</span><span class="menu-item">7 Hours</span></div>
+<div class="menu-item"><span>Um Qays/Jerash & Ajlun</span><span class="menu-item">100</span><span class="menu-item">150</span><span class="menu-item">12 Hours</span></div>
+<div class="menu-item"><span>Dead Sea</span><span class="menu-item">60</span><span class="menu-item">90</span><span class="menu-item">5 Hours</span></div>
+<div class="menu-item"><span>Desert Castles</span><span class="menu-item">85</span><span class="menu-item">105</span><span class="menu-item">7 Hours</span></div>
+<div class="menu-item"><span>Hammamat Ma’in (Hot Springs)</span><span class="menu-item">60</span><span class="menu-item">90</span><span class="menu-item">6 Hours</span></div>
+<div class="menu-item"><span>Wadi Rum</span><span class="menu-item">160</span><span class="menu-item">220</span><span class="menu-item">12 Hours</span></div>
+<div class="menu-item"><span>Aqaba</span><span class="menu-item">115</span><span class="menu-item">165</span><span class="menu-item">1 Way</span></div>
+<div class="menu-item"><span>Aqaba</span><span class="menu-item">165</span><span class="menu-item">225</span><span class="menu-item">2 Ways</span></div>
+<div class="menu-item"><span>Amman Tour</span><span class="menu-item">50</span><span class="menu-item">70</span><span class="menu-item">4 Hours</span></div>
+<br>
+<div>
+    - Rates above are in JOD.
+</div>
+<div>
+    - Site entry fees and tips are not included.
+</div>
+<div>
+    - Please add JD 10.00 for each additional hour.
+</div>
+</div>
 <center>
         <div class="buttons">
             <button onclick="window.location.href='https://toledohotel.github.io/Toledo-Hotel/Toledo%20Amman%20Hotel2021.html'">Main Page</button>
-            <button onclick="window.location.href='https://www.toledohotel.jo/en/explore-jordan-en'">Explore Jordan</button>
+            <button onclick="window.location.href='https://www.toledohotel.jo/en/explore-jordan-en'">Explor Jordan</button>
         </center>
         </div>
     </div>
+             
+</center>
 </body>
 </html>
+
