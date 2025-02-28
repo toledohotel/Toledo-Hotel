@@ -6,43 +6,49 @@
     <title>Private Tours</title>
     <style>
         body {
-            font-family: "Times New Roman", serif; 
-            margin: 20px ;
-            line-height: 1.5;
-            background-color:#f8f9fa; ;
+            background-image: url('privatetour.jpg'); /* Replace with actual background image URL */
+            background-size: cover;
+            background-position: ;
+            font-family: times new roman, sans-serif;
             text-align:;
-            border-style: double;
-            border-width: 0px; 
-            
         }
-            
         .container {
-            display: flex;
-            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            width: 80%;
+            margin: 50px auto;
+            border-radius: 10px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin:5px;
+            margin-top: 20px;
+            margin: auto;
             border-radius: 10px;
             overflow: hidden;
+
+
         }
         th, td {
-            border: 1px dotted #000;
-            padding: 8px;
+            border: 1px dotted black;
+            padding: 10px;
             text-align: center;
         }
         th {
-	background-color: #1e365d;
-	color: white;
-	}
+            background-color: #1e365d;
+            color: white;
+        }
+        .note {
+            margin-top: 20px;
+            font-size: 14px;
+        }
         .buttons {
             margin-top: 20px;
         }
         button {
             padding: 10px 20px;
             border: none;
-            background-color: #004080;
+            background-color: #1e365d;
             color: white;
             cursor: pointer;
             border-radius: 5px;
@@ -50,18 +56,18 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <center>
+   <div class="container">
+<center>
     <a href="https://toledohotel.jo">
         <img src="logo.png" width="160" height="55" alt="Toledo Hotel Logo">
     </a>
-        <h2>Private Tours</h2></center>
+       <h2>Private Tours</h2></center>
         <table>
             <tr>
                 <th>TOUR</th>
                 <th>CAR (JOD)</th>
                 <th>VAN (JOD)</th>
-                <th>EST. TIME</th>
+                <th>EST.TIME</th>
             </tr>
             <tr><td>Petra (Desert Highway)</td><td>105</td><td>150</td><td>12 Hours</td></tr>
             <tr><td>Madaba/Mount Nebo/Dead Sea/Baptism site</td><td>90</td><td>115</td><td>9 Hours</td></tr>
@@ -76,13 +82,16 @@
             <tr><td>Aqaba (Two Ways)</td><td>165</td><td>225</td><td>2 Ways</td></tr>
             <tr><td>Amman Tour</td><td>50</td><td>70</td><td>4 Hours</td></tr>
         </table>
-        <p class="note">- Rates above are in JOD. </p>
-        <p class="note">- Site entry fees and tips are not included.</p>
-        <p class="note">- Please add JD 10.00 for each additional hour.</p>
-        <center>
+        <dl>
+        <dd>- Rates above are in JOD.</dd>
+        <dd>- Site entry fees and tips are not included.</dd>
+        <dd>- Please add JD 10.00 for each additional hour.</dd>
+        </dl>
+<center>
         <div class="buttons">
-            <button onclick="window.location.href='https://toledohotel.github.io/Toledo-Hotel/Toledo%20Amman%20Hotel2021.html'">Main Page</button>
-            <button onclick="window.location.href='https://www.toledohotel.jo/en/explore-jordan-en'">Explore Jordan</button></center>
+            <button onclick="window.location.href='https://toledohotel.github.io/Toledo-Hotel/Toledo%20Amman%20Hotel2021.html';'">Main Page</button>
+            <button onclick="window.location.href='https://www.toledohotel.jo/en/explore-jordan-en'">Explore Jordan</button>
+        </center>
         </div>
     </div>
 </body>
