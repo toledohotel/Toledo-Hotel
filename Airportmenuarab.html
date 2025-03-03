@@ -1,70 +1,116 @@
+
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>استقبال المطار و المساعدة</title>
-    <style>
+    <title>استقبال المطار و المساعدة
+</title>
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=VsFga_OKWn2Hb153DnJPmljWWds8A7HcGd_WbsYR_kZvPEjx_VoarN_J6kVBiSicIfZEPUhE-AIq6gtnpM6nSlHXyKQZvFcI-B2Vmz99TvY" charset="UTF-8"></script><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=11U2V75g0XPDdLSuSUH9e8kXDVb7RMxVm-w3gSCswBF62ElozJuAJtwM2cl3dczsczfVve12kwiCNjA84Ep-DJ14qLiKrOFy0QDQZUPjWAA" charset="UTF-8"></script><style>
         body {
-            background-color: #f8f9fa;
-            text-align: center;
-            border-style: double;
-            border-width: 0px; 
+            font-family: Arial, sans-serif;
+            background-image: url('airport.jpg');
+            background-color: #fdf1dc;
+            margin: 0;
+            padding: 0;
+            color: #000;
+            position:initial;
+            }
+                     
+        .menu-container {
+            width: 80%;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            text-align: ;
         }
-            table {
-            width: 100%;
-            margin: auto;
-            border-collapse: collapse;
-            border-radius: 10px;
-            overflow: hidden;
-        th, td {
-            border: 1px dotted black;
-            padding: 10px;
-            margin: 0; 
+        h1 {
             text-align: center;
+            font-size: 32px;
+            color: navy;
+            margin-bottom: 15px;
         }
-         th {
+        h2 {
+            font-size: 22px;
+            color: red;
+            margin-bottom: 5px;
+        }
+        .section-title {
+            color: darkred;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            font-size: 16px;
+        }
+        .menu-item span {
+            flex: 1;
+        }
+        .price {
+            text-align: left;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            font-style: ;
+        }
+        .description {
+            font-style: italic;
+            font-size: 14px;
+            margin: 0 0 5px 0;
+            color: #555;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
             background-color: #1e365d;
             color: white;
-            }
+            cursor: pointer;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
-    <br>
-    <a href="https://toledohotel.jo">
-        <img src="logo.png" width="160" height="55" alt="Toledo Hotel">
-    </a>
-    <p><b style="font-size: 24px; font-family: 'Times New Roman';">استقبال المطار و المساعدة</b></p>
-    <table style="border-collapse: collapse; border-spacing: 0; margin: auto;">
-        <tr>
-            <th colspan="2">سيارة</th> 
-        </tr>
-        <tr>
-            <td>رحلتان</th>
-            <td>رحلة واحدة</td>
-        </tr>
-         <tr>
-            <td style="color: red;">JD 60</td>
-            <td style="color: red;">JD 35</td>
-        </tr>
-        <tr>
-            <td style="border-right: 0; border-left: 0;" colspan="2"></td>
-        </tr>
-        <tr>
-            <th colspan="2">باص فان</th> 
-        </tr>
-        <tr>
-            <td>رحلتان</td>
-            <td>رحلة واحدة</td>
-        </tr>
-        <tr>
-            <td style="color: red;">JD 80</td>
-            <td style="color: red;">JD 50</td>
-        </tr>
-    </table>
-<form style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
-    <input type="button" onclick="window.location.href='https://toledohotel.github.io/Toledo-Hotel/arab.html';" value="الصفحة الرئيسية">
-    <input type="button" onclick="window.location.href='https://landbot.pro/v3/H-1780052-8OB09GIBUZOUE8AX/index.html';" value="خدمات المطار">
-</form>
-</body>
+<div class="menu-container">
+<center><a href="https://toledohotel.jo"><img src="logo.png" width="160" height="55" alt="Toledo Hotel Logo"></a></center>
+<br>
+    <h1>استقبال المطار و المساعدة
+
+</h1>
+<h2>السيارة </h2>
+    <div class="menu-item"><span><b>الرحلة</b></span><span class="price">السعر</span></div>
+    <div class="menu-item"><span>رحلة واحدة</span><span class="price">35</span></div>
+    <div class="menu-item"><span>رحلتان</span><span class="price">60</span></div>
+    <h2>فان</h2>
+      <div class="menu-item"><span><b>الرحلة</b></span><span class="price">السعر</span></div>
+    <div class="menu-item"><span>رحلة واحدة</span><span class="price">50</span></div>
+    <div class="menu-item"><span>رحلتان</span><span class="price">80</span></div>  
+
+   <div class="footer">للخدمة الرجاء الإتصال على الرقم (0)
+!</div>
+<div class="footer">شكرًا لاختيارك فندق توليدو. استمتع بإقامتك!
+ </div>
+</div>
+<center>
+<div class="buttons">
+            <button onclick="window.location.href='https://toledohotel.github.io/Toledo-Hotel/arab.html'">الصفحة الرئيسية</button>
+            <button onclick="window.location.href='https://landbot.pro/v3/H-1780052-8OB09GIBUZOUE8AX/index.html'">خدمات المطار</button>
+        </center>
+        </div>
+    </div>
+</center>
+    </body>
 </html>
