@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -5,122 +6,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>قائمة أسعار الغسيل</title>
     <style>
-       body {
-            font-family: "Times New Roman", serif; 
-            margin: 20px ;
-            line-height: 1.5;
-            background-color:#f8f9fa; ;
-            text-align:;
-            border-style: double;
-            border-width: 0px; 
-            
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('');
+            background-color: #fdf1dc;
+            margin: 0;
+            padding: 0;
+            color: #000;
+            position:initial;
+    
         }
-            
-        .container {
-            display: flex;
-            justify-content: center;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin:5px;
-            border-radius: 10px;
-            overflow: hidden;
-            direction: rtl;
-            text-align: right;
-        }
-        th, td {
-            border: 1px dotted #000;
-            padding: 8px;
+        .menu-container {
+            width: 80%;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            text-align: justify;
+               }
+        h1 {
             text-align: center;
+            font-size: 32px;
+            color: navy;
+            margin-bottom: 15px;
         }
-        th {
-	background-color: #1e365d;
-	color: white;
-}
+        h2 {
+            font-size: 22px;
+            color: red;
+            margin-bottom: 5px;
+        }
+        .section-title {
+            color: darkred;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            font-size: 16px;
+            text-align:;
+        }
+        .menu-item span {
+            flex: 1;
+            text-align:;
+        }
+        .price {
+            text-align: center;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: ;
+            margin-top: 20px;
+            font-size: 14px;
+            font-style: ;
+        }
+        .description {
+            font-style: italic;
+            font-size: 14px;
+            margin: 0 0 5px 0;
+            color: #555;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #1e365d;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
+<div class="menu-container">
+<center><a href="https://toledohotel.jo"><img src="logo.png" width="160" height="55" alt="Toledo Hotel Logo"></a></center>
+<br>
+ <h1> قائمة أسعار الغسيل </h1>
+ <h2>الملابس التقليدية</h2>
+<div class="menu-item"><span><b>القطعة</b></span><span class="menu-item"><b>كي فقط</b></span><span class="menu-item"><b>كي و غسيل</b></span></div>
+<div class="menu-item"><span>دشداشة صوف</span><span class="menu-item">4.500</span><span class="menu-item">6.250</span></div>
+<div class="menu-item"><span>دشداشة</span><span class="menu-item">3.500</span><span class="menu-item">5.250</span></div>
+<div class="menu-item"><span>حطة</span><span class="menu-item">1.500</span><span class="menu-item">1.750</span></div>
+<div class="menu-item"><span>وزرة</span><span class="menu-item">-</span><span class="menu-item">2.750</span></div>
+<h2>أغطية الرأس و لوازمها  </h2>
+<div class="menu-item"><span>طاقية</span><span class="menu-item">0.500</span><span class="menu-item">1.000</span></div>
+<div class="menu-item"><span>إيشارب</span><span class="menu-item">1.500</span><span class="menu-item">1.750</span></div>
+<div class="menu-item"><span>ربطة عنق</span><span class="menu-item">1.500</span><span class="menu-item">1.750</span></div>
+<div class="menu-item"><span>منديل( محرمة )</span><span class="menu-item">0.500</span><span class="menu-item">0.750</span></div>
+<h2>الملابس الخارجية</h2>
+<div class="menu-item"><span>أفرهول</span><span class="menu-item">3.500</span><span class="menu-item">7.250</span></div>
+<div class="menu-item"><span>معطف</span><span class="menu-item">3.750</span><span class="menu-item">5.250</span></div>
+<div class="menu-item"><span>جاكيت</span><span class="menu-item">2.750</span><span class="menu-item">4.500</span></div>
+<h2>الفساتين و التنانير</h2>
+<div class="menu-item"><span>طقم أطفال</span><span class="menu-item">-</span><span class="menu-item">1.750</span></div>
+<div class="menu-item"><span>فستان</span><span class="menu-item">2.750</span><span class="menu-item">3.750</span></div>
+<div class="menu-item"><span>فستان مكسر</span><span class="menu-item">4.250</span><span class="menu-item">6.250</span></div>
+<div class="menu-item"><span>فستان قطعتين</span><span class="menu-item">5.000</span><span class="menu-item">6.250</span></div>
+<div class="menu-item"><span>فستان سهرة</span><span class="menu-item">4.250</span><span class="menu-item">7.000</span></div>
+<div class="menu-item"><span>عباية</span><span class="menu-item">2.750</span><span class="menu-item">4.500</span></div>
+<div class="menu-item"><span>تنورة</span><span class="menu-item">1.750</span><span class="menu-item">2.750</span></div>
+<div class="menu-item"><span>تنورة مكسر</span><span class="menu-item">1.750</span><span class="menu-item">3.500</span></div>
+<h2>البدل</h2>
+<div class="menu-item"><span>بدلة قطعتان</span><span class="menu-item">4.500</span><span class="menu-item">6.250</span></div>
+<div class="menu-item"><span>بدلة سفاري</span><span class="menu-item">3.500</span><span class="menu-item">5.250</span></div>
+<h2>البلايز و القمصان</h2>
+<div class="menu-item"><span>بلوزة عادي</span><span class="menu-item">1.000</span><span class="menu-item">2.250</span></div>
+<div class="menu-item"><span>بلوزة حرير</span><span class="menu-item">1.500</span><span class="menu-item">2.750</span></div>
+<div class="menu-item"><span>كنزة</span><span class="menu-item">1.750</span><span class="menu-item">2.750</span></div>
+<div class="menu-item"><span>قميص عادي</span><span class="menu-item">1.500</span><span class="menu-item">1.750</span></div>
+<div class="menu-item"><span>قميص حرير</span><span class="menu-item">2.750</span><span class="menu-item">3.000</span></div>
+<div class="menu-item"><span>تي شيرت</span><span class="menu-item">1.500</span><span class="menu-item">1.750</span></div>
+<h2>البلاطين</h2>
+<div class="menu-item"><span>بنطلون</span><span class="menu-item">1.750</span><span class="menu-item">2.250</span></div>
+<h2>ملابس الاسترخاء و النوم</h2>
+<div class="menu-item"><span>روب حمام</span><span class="menu-item">-</span><span class="menu-item">4.500</span></div>
+<div class="menu-item"><span>روب</span><span class="menu-item">3.500</span><span class="menu-item">3.500</span></div>
+<div class="menu-item"><span>قميص نوم  نسائي</span><span class="menu-item">1.750</span><span class="menu-item">2.750</span></div>
+<div class="menu-item"><span>قميص نوم حرير نسائي</span><span class="menu-item">1.750</span><span class="menu-item">3.000</span></div>
+<div class="menu-item"><span>بيجاما عادي</span><span class="menu-item">2.750</span><span class="menu-item">4.500</span></div>
+<div class="menu-item"><span>بيجاما حرير</span><span class="menu-item">3.500</span><span class="menu-item">5.250</span></div>
+<div class="menu-item"><span>شلحة </span><span class="menu-item">1.750</span><span class="menu-item">2.750</span></div>
+<h2>الملابس الداخلية</h2>
+<div class="menu-item"><span>صدرية</span><span class="menu-item">-</span><span class="menu-item">1.000</span></div>
+<div class="menu-item"><span>مشد</span><span class="menu-item">3.500</span><span class="menu-item">3.500</span></div>
+<div class="menu-item"><span>فانيلا</span><span class="menu-item">1.000</span><span class="menu-item">1.500</span></div>
+<div class="menu-item"><span> شورت رياضي </span><span class="menu-item">1.000</span><span class="menu-item">1.500</span></div>
+<div class="menu-item"><span>كلسون</span><span class="menu-item">-</span><span class="menu-item">1.000</span></div>
+<h2>ملابس رياضية</h2>
+<div class="menu-item"><span>بدلة رياضية</span><span class="menu-item">3.250</span><span class="menu-item">4.500</span></div>
+<h2>ملابس الأرجل و السيقان</h2>
+<div class="menu-item"><span>جرابات و كلسات</span><span class="menu-item">-</span><span class="menu-item">1.000</span></div>
+<div class="menu-item"><span>جرابات طويلة ( كولون)</span><span class="menu-item">1.000</span><span class="menu-item">1.000</span></div>
+<h2> أخرى</h2>
+<div class="menu-item"><span>بشكير</span><span class="menu-item">1.500</span><span class="menu-item">2.250</span></div>
+<br>
+<div class="footer">- الأسعار أعلاه بالدينار الأردني.</div>
+<div class="footer">- الخدمة السريعة خلال 4 ساعات تضاف 50% على السعر أعلاه، وإلا يتم إرجاعها في اليوم التالي. </div>
+<div class="footer">- يرجى ذكر الملابس ذات النوعية الخاصة فالفندق غير مسؤول عن عدم ثبات الألوان أو انكماش الملابس. </div>
+<div class="footer">- في حالة الضياع أو التلف، يكون التعويض بحدود 10 أضعاف قيمة العمل. </div>
+<div class="footer">- أي شكوى يجب أن يبلغ عنها خلال 24 ساعة. </div>
+<div class="footer">- تضاف 50% إذا كانت الخدمة خلال الأعياد الرسمية أو أيام الجمع. </div>
+<div class="footer">- جميع الأصناف أعلاه يضاف إليها 8% ضريبة و 5% خدمة </div>
+<div class="footer"><center><i>للخدمة الرجاء الإتصال على الرقم (0) </i></center></div>
+<div class="footer"><center><i>شكرًا لاختيارك فندق توليدو. استمتع بإقامتك! </i></center></div>
+</div>
 <center>
-    <a href="https://toledohotel.jo">
-        <img src="logo.png" width="160" height="55" alt="Toledo Hotel Logo"></center>
-    </a>
-    <h2 style="text-align: center;">قائمة أسعار الغسيل</h2>
-    <div class="container">
-        <table dir="rtl">
-            <tr>
-                <th>القطعة</th>
-                <th>سعر الكي فقط</th>
-                <th>سعر الغسيل و الكي </th>
-            </tr>
-
-            <tr><td>دشداشة صوف</td><td>4.500</td><td>6.250</td></tr>
-            <tr><td>دشداشة</td> <td>3.500</td><td>5.250</td></tr>
-            <tr><td>حطة</td><td>1.500</td><td>1.750</td></tr>
-            <tr><td>طاقية</td><td>0.500</td><td>1.000</td></tr>
-                        <tr><td> بلوزة     </td><td>1.000     </td><td>2.250   </td></tr>
-            <tr><td>أفرهول</td><td>3.500</td><td>7.250</td></tr>
-            <tr><td>معطف</td><td>3.750</td><td>5.250</td></tr>
-            <tr><td>روب حمام </td><td>-</td><td>4.500</td></tr>
-            <tr><td>بدلة رياضية</td><td>3.250</td><td>4.500</td></tr>
-            <tr><td>طقم طفل</td><td>-</td><td>1.750</td></td></tr>
-            <tr><td>بشكير</td><td>1.500</td><td>2.250</td></tr>
-                        <tr><td>كنزة</td><td>1.750</td><td>2.750</td></tr>
-                        <tr><td>وزرة</td><td>-</td><td>2.750</td></tr>
-                        <tr><td> بلوزة حرير    </td><td>1.500     </td><td>2.750   </td></tr>
-                        <tr><td>قميص نوم      </td><td>1.750     </td><td>2.750   </td></tr>
-                        <tr><td>قميص نوم حرير </td><td>1.750     </td><td>3.000   </td></tr>
-                        <tr><td> شلحة نسائي            </td><td>1.750     </td><td>2.750   </td></tr>
-                        <tr><td>حمالة صدر       </td><td>-         </td><td>1.000   </td></tr>
-                        <tr><td>كلسات           </td><td>-        </td><td>1.000   </td></tr>
-                        <tr><td>كولون      </td><td>1.000     </td><td>1.000   </td></tr>
-                        <tr><td>روب           </td><td>3.500     </td><td>3.500   </td></tr>
-                        <tr><td>مشد         </td><td>3.500     </td><td>3.500   </td></tr>
-                        <tr><td style="border-right: 0; border-left: 0;" colspan="2"></td></tr>
-                        <tr>
-                <th>القطعة</th>
-                <th>سعر الغسيل و الكي</th>
-                <th>سعر الكي فقط</th>
-            </tr>
-            <tr><td>بدلة قطعتان</td><td>4.500</td><td>6.250</td></tr>
-            <tr><td>بدلة سفاري</td><td>3.500</td><td>5.250</td></tr>
-            <tr><td>جاكيت</td><td>2.750</td><td>4.500</td></tr>
-            <tr><td>بنطلون</td><td>1.750</td><td>2.250</td></tr>
-            <tr><td>قميص حرير</td><td>2.750</td><td>3.000</td></tr>
-            <tr><td>قميص عادي</td><td>1.500</td><td>1.750</td></tr>
-            <tr><td>تي شيرت</td><td>1.500</td><td>1.750</td></tr>
-            <tr><td>ربطة عنق</td><td>1.500</td><td>1.750</td></tr>
-            <tr><td>بيجاما</td><td>2.750</td><td>4.500</td></tr>
-            <tr><td>بيجاما حرير</td><td>3.500</td><td>5.250</td></tr>
-            <tr><td>فانيلا</td><td>1.000</td><td>1.500</td></tr>
-                        <tr><td>بنطلون شورت</td><td>1.000</td><td>1.500</td></tr>
-                        <tr><td>كلسون</td><td>-    </td><td>1.000</td></td></tr>
-                        <tr><td>جرابات</td><td>-    </td><td>1.000</td></tr>
-                        <tr><td>منديل قماش</td><td>0.500    </td><td>0.750</td></tr>
-                        <tr><td>فستان عادي</td><td>2.750    </td><td>3.750</td></tr>
-                        <tr><td>فستان حرير</td><td>4.250    </td><td>6.250</td></tr>
-                        <tr><td>فستان مكسر قطعتان</td><td>5.000    </td><td>6.250</td></tr>
-                        <tr><td>فستان سهرة</td><td>4.250    </td><td>7.000</td></tr>
-                        <tr><td>عباية</td><td>2.750    </td><td>4.500</td></tr>
-                        <tr><td>تنورة</td><td>1.750    </td><td>2.750</td></tr>
-                        <tr><td>تنورة مكسر</td><td>1.750    </td><td>3.500</td></tr>
-                        <tr><td>إيشارب</td><td>1.500    </td><td>1.750</td></tr>
-</table>
+        <div class="buttons">
+            <button onclick="window.location.href='https://toledohotel.github.io/Toledo-Hotel/arab.html'">الصفحة الرئيسية</button>
+        </center>
         </div>
- <div class="notice">
-        <h3>لإجل راحتكم يرجي:</h3>
-        <ul>
-            <li>الخدمة السريعة خلال 4 ساعات تضاف  50% على السعر أعلاه، وإلا يتم إرجاعها في اليوم التالي.</li>
-            <li>يرجى ذكر الملابس ذات النوعية الخاصة فالفندق غير مسؤول عن عدم ثبات الألوان أو انكماش الملابس.</li>
-            <li>في حالة الضياع أو التلف، يكون التعويض بحدود  10 أضعاف قيمة العمل .</li>
-            <li>أي شكوى يجب أن يبلغ عنها خلال 24 ساعة.</li>
-                        <li>تضاف 50% إذا كانت الخدمة خلال الأعياد الرسمية أو أيام الجمع. </li>
-            <li>يضاف 5% بدل خدمة.</li>
-            <li>يضاف 8% ضريبة مبيعات.</li>
-        </ul>
     </div>
-<center>
-    <h3>للخدمة يرجى الاتصال على الرقم (0)</h3>
-    <button onclick="window.location.href='https://toledohotel.github.io/Toledo-Hotel/arab.html';">الصفحة الرئيسية</button>
+             
+</center>
 </body>
 </html>
+
