@@ -1,22 +1,380 @@
-<html> 
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
-<title>Toledo Hotel Welcome</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style type="text/css">
-body {
-  background-color: ;
-    position:initial;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome & Services</title>
+    <style>
+        body {
+            font-family: "Times New Roman", serif; 
+            margin: 20px ;
+            line-height: 1.5;
+            background-color:#fdf1dc;
+            text-align:;
+            border-style:double ;
+           border-width: 0px; 
+            margin: 0;
+            padding: 0;
+            color: #000;
+            position:initial;
+          
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border: 0px dotted black;
+            border-radius: 10px;
+            background-color:;
+            text-align: justify;
+        }
+ .menu-container {
+            width: 80%;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            text-align: ;
+ }
+	    
+        h2 {
+            text-align: center;
+        }
+        .ltr {
+            direction: ltr;
+            text-align: justify;
+        }
+        .services, .locations {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+	}
+        .service-column, .location-column {
+            width: 100%;
+        }
+                        
+            table {
+            width: 100%;
+            margin: auto;
+            border-collapse: collapse;
+            border-radius: 10px;
+            overflow: hidden;
+	    }  
+        th, td {
+            border: 1px dotted black;
+            padding: 10px;
+            margin: 0; 
+            text-align: center;
+        }
+    th {
+	background-color: #1e365d;
+	color: white;
     }
-</style>
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #1e365d;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+hr {
+    border: none;
+    height: 3px;
+    background-color: black;
+    width: 100%;
+    margin: 20px auto;
+}
+ 
+    </style>
 </head>
 <body>
+     <div class="menu-container">
+        <center>
+        <a href="https://toledohotel.jo">
+        <img src="logo.png" width="160" height="55" alt="Toledo Hotel Logo">
+        </a>
+        </center>
+        <h3 class="ltr">Dear Guest,</h3>
+        <p class="ltr">It is my pleasure to welcome you to Toledo Hotel. Whether you are traveling for business or pleasure, we know you have a variety of hotels to choose from, and we are honored that you have selected to stay with us. Our professional and friendly staff is committed to ensuring that your stay is both enjoyable and comfortable.
+        </p>
+        <p class="ltr">We promise you we will do our best to serve you in the best way. If you require any assistance, please contact the Frontdesk immediately to allow us the opportunity to provide it.
+        </p>
+        <p class="ltr"> Again, thank you for choosing Toledo Hotel. We look forward to serving you now and on future trips to Amman.
+        </p>
+        <p class="ltr"><strong>Regards,<br> Hakam Barakat, General Manager</strong></p>
+        <hr>
+        <h2>Toledo Services</h2>
+        <div class="services">
+                <div class="service-column">
+                <ul class="ltr">
+                    <li>Toledo Hotel's (108) rooms and suites are equipped with amenities to ensure guest comfort.</li>
+                    <li>Long-term residency is available.</li>
+                    <li>Each room features central air conditioning and heating..</li>
+                    <li>A kettle and mini-bar provide guests with hot and cold beverages.</li>
+                    <li>24-hour room service, a coffee shop, and restaurant.</li>
+                    <li>Satellite TV channels are available in multiple languages.</li>
+                    <li>Relax in a friendly atmosphere on our terrace.</li>
+                    <li>Safety deposit boxes are available for guests.</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <h2> Location/Address</h2>
+        <div class="locations">
+                 <div class="location-column">
+                <ul class="ltr">
+                    <li>Main entrance: Jabal Al-Hussein, 37 Al Razi Street. Access to Shops and Restaurants.</li>
+                    <li>Alternate entry: Al Abdali, 32 Umayyah bin Abd Shams Street. Access to Banks, Old City Center, Hospitals, Shops and Tour Sites.</li>
+                </ul>
+            </div>
+        </div>
+       <hr>
+<h2>Other Services</h2>
+  <div class="locations">
+            <div class="location-column">
+                            <ul class="ltr">
+                    <li><b>Wake-up call:</b> Please contact front desk (0) to arrange time of your wake-up call.</li>                 
+                             
+                    <li><b>Check Out time at 12 noon.</b> Please do not forget to return the room key when checking out.</li>
+                  
+                    <li><b>Doctor:</b> Please contact frontdesk (0) to arrange an in-house physician visit. A 24 hour first-aid service is available.</li>                   
+                            
+                    <li><b>Credit Card:</b> AMEX, VISA, and MasterCard are welcome.</li>            
+                       
+                    <li><b>Currency Exchange:</b> Available at frontdesk.</li>              
+                         
+                    <li><b>Express Mail:</b> Overnight courier service is available at the frontdesk.</li>
+                    <li><b>Business Center:</b> PC, Internet service, Translation, Typing, Fax, Photocopy.</li>
+                    <li><b>Free WIFI:</b> Internet access is available in all rooms and throughout the hotel.</li>
+                    <li><b>Airport Transportation/Border:</b> Please contact frontdesk (0) to arrange transportation.</li>
+                    <li><b>Car Rental:</b> Please contact frontdesk (0).</li>
+                    <li><b>Taxi:</b> Yellow taxi is available 24 hours and strictly run on meters.</li>
+                    <li><b>Uber, Careeem & Jeeny Application service </b> are available at reception.</li>
+                    <li><b>Laundry & Iron: </b> Iron and ironing boards are available. Also, dry cleaning, laundry & pressing service are available 24 hours, please contact frontdesk (0).</li>
+<li><b>Minibar:</b> An assorted collection of soft drinks and snacks are available in the minibar.  If there is an item that is not available, please contact frontdesk (0) and we will do our best to provide it.  Upon request, we will gladly clear the items in the mini-bar or   re-stock upon request.</li>
+<li><b>Bedding: </b> An extra pillow is available in your room. If an extra blanket or pillow is required, please contact the front desk (0).</li>
+<li><b>Extra Bed/Baby Cot:</b> Please contact frontdesk (0).</li>
+<li><b>Housekeeping:</b> Housekeeping staff is available 24 hours should you need evening service, please contact front desk (0).</li>
+<li><b>Hair Dryer: </b> Wall-mounted hair dryer is located in your bathroom.</li>
+<li><b>Luggage Room:</b> A luggage room is available at the front desk.</li>
+<li><b>Luggage: </b> For assistance or storage of your luggage, please contact frontdesk (0).</li>
+<li><b>Service: </b> The hotel is fully staffed 24 hours should you need any assistance. </li>
+<li><b>Prayer: </b> Direction sticker of the “Kiblah” is on the ceiling of your room.</li>
+<li><b>Non-Smoking:</b> Non-smoking rooms and non-smoking public areas are available.</li>
+<li><b>Shoe-shine:</b> Shoe mitt, shoe shine machine, and polish service is available upon request, please contact front desk (0). </li>
+<li><b>Safety Box:</b> Room is equipped with a safe for your personal valuables. The management cannot accept any liability for any missing items, which have not been placed in the safe. </li>
+<li><b>Wheelchair:</b> Wheelchair accessible rooms and ramps are available for your comfort.</li>
+<li><b>Events and buffets:</b> Several offers are available for your choosing, please dial (1812) for banqueting services.</li>
+<li><b>Meetings and Conferences:</b> Several rooms and halls are available for meetings.  Meeting room and halls are equipped with all audio/visual equipment, and seats from 15 to 400 guests, please dial (1812) for arrangements.</li>
+<li><b>Adapters & Transformers:</b> Voltage throughout the hotel is 220V, for your convenience special 110V electric razor outlet is provided in your bathroom. </li>
+<li><b>Security/Safety:</b> To ensure your safety and security, a 24 hour security personnel and duty manager are available.  In addition, CCTV cameras are placed throughout the hotel.  Kindly view the map behind your room door in case of emergency evacuation. </li>
+<li><b>Tours,  Sites, Airline Tickets:</b> Please contact the frontdesk (0) for assistance.</li>
+<li><b>Maps:</b> Maps are available, please contact the frontdesk (0).</li>
+</div>
+</div>
+<hr>
+<h2>Meeting room measurements</h2>
+<table style="border-collapse: collapse; border-spacing: 0; margin: auto;">
+             <tr>
+            <th>Meeting Room</th>
+            <th >Area (m2)</th>
+            </tr>
+         <tr>
+            <td style="color: ;">Alhambra (Al-Hamra) </td>
+            <td style="color: ;">40 m²</td>
+        </tr>
+
+<tr>
+            <td style="color: ;">Madrid </td>
+            <td style="color: ;">72 m²</td>
+        </tr>
+<tr>
+            <td style="color: ;">Granada </td>
+            <td style="color: ;">72 m²</td>
+        </tr>
+<tr>
+            <td style="color: ;">Murcia </td>
+            <td style="color: ;">45 m²</td>
+        </tr>
+<tr>
+            <td style="color: ;">Córdoba (Qortuba) I </td>
+            <td style="color: ;">240 m²</td>
+        </tr>
+<tr>
+            <td style="color: ;">Córdoba (Qortuba) II </td>
+            <td style="color: ;">220 m²</td>
+        </tr>
+
+    </table>
+                                 
+<hr>
+<h2>Distance from Amman</h2>
+<table style="border-collapse: collapse; border-spacing: 0; margin: auto;">
+             <tr>
+            <th>City</th>
+            <th>Distance(km)</th>
+            </tr>
+         <tr>
+            <td style="color: ;">Irbid </td>
+            <td style="color: ;">88 km</td>
+        </tr>
+<tr>
+            <td style="color: ;">Jerash </td>
+            <td style="color: ;">50 km</td>
+        </tr>
+<tr>
+            <td style="color: ;">Madaba </td>
+            <td style="color: ;">32 km</td>
+        </tr>
+<tr>
+            <td style="color: ;">Karak </td>
+            <td style="color: ;">118 km</td>
+        </tr>
+<tr>
+            <td style="color: ;">Aqaba </td>
+            <td style="color: ;">324 km</td>
+        </tr>
+<tr>
+            <td style="color: ;">King Hussein Bridge </td>
+            <td style="color: ;">57 km</td>
+        </tr>
+<tr>
+            <td style="color: ;">Dead Sea </td>
+            <td style="color: ;">60 km</td>
+        </tr>
+ </table>
+        <hr>
+  <center><a href="https://www.toledohotel.jo/en/fitness-center">
+        <img src="Maxfitness.png" width="160" height="80" alt="Toledo Hotel">
+    </a>                                 
+    </center>
+         <div class="container">
+     <h3 class="ltr">Dear Guest,</h3>  
+            <p>The pool, sauna rooms, steam rooms, Jacuzzi, and massage services are available. Please call <strong>(1004)</strong> from <strong>6:00 AM to 11:00 PM</strong>. These facilities are located on the ground level.</p>
+            <h3>Opening Times:</h3>
+        <ul>
+            <li>Men (Gym & Pool): 06:00 AM – 11:00 PM (Daily except Friday).</li>
+            <li>Ladies (For hotel guests only) – Pool: 06:00 AM – 12:00 PM (Daily except Friday).</li>
+            <li>Ladies (For hotel guests only) – Gym:  06:00 AM – 11:00 PM (Daily except Friday).</li>
+        </ul>
+    </div>
+       <hr>
+   <h2>Telephone Directory</h2>
+<table style="border-collapse: collapse; border-spacing: 0; margin: auto;">
+             <tr>
+            <th colspan="2">At Toledo Hotel</th>
+                 </tr>
+                 <tr>
+            <td style="background-color:;">Outside Line</td>
+            <td style="background-color:;">9</td>
+</tr>  
+    <tr>
+            <td style="background-color:;">Reception</td>
+            <td style="background-color:;">0</td>
+</tr>   
+    <tr>
+            <td style="background-color:;">Restaurant & Coffee Shop</td>
+            <td style="background-color:;">4</td>
+</tr>    
+    <tr>
+            <td style="background-color:;">House Keeping</td>
+            <td style="background-color:;">0</td>
+</tr>    
+    <tr>
+            <td style="background-color:;">Bellboy</td>
+            <td style="background-color:;">1817</td>
+</tr>   
+    <tr>
+            <td style="background-color:;">Room to Room</td>
+            <td style="background-color:;">1 + Room Number</td>
+</tr>    
+    <tr>
+            <td style="border-right: 0; border-left: 0;" colspan="2"></td>
+        </tr>
+    <tr>
+            <th colspan="2">Jordan Cities</th>
+                 </tr>
+                <tr>
+            <td style="background-color:;">Amman</td>
+            <td style="background-color:;">06</td>
+            </tr>
+    <tr>
+    <td style="background-color:;">Madaba-Salt-Zarqa-Rusaifa</td>
+    <td style="background-color:;">05</td>
+    </tr>
+    <tr>
+    <td style="background-color:;">Aqaba-Tafileh-Ma'an</td>
+    <td style="background-color:;">03</td>
+         </tr>
+<tr>
+    <td style="background-color:;">Irbed-Jerash-Ajloun</td>
+    <td style="background-color:;">02</td>
+</tr>
+<tr>
+    <td style="background-color:;">Ramtha-AlMafraq-Alhusn</td>
+    <td style="background-color:;">02</td>
+</tr>
+<tr>
+            <td style="border-right: 0; border-left: 0;" colspan="2"></td>
+        </tr>
+    <tr>
+            <th colspan="2">Country Code</th>
+                 </tr>            
+    <tr>
+            <td style="background-color:;">Jordan</td>
+            <td style="background-color:;">962</td>
+            </tr>
+    <tr><td>Austria</td><td>43</td></tr>
+    <tr><td>Bahrain</td><td>973</td></tr>
+    <tr><td>Belgium</td><td>32</td></tr>
+    <tr><td>Brazil</td><td>55</td></tr>
+    <tr><td>Canada</td><td>1</td></tr>
+    <tr><td>Cyprus</td><td>357</td></tr>
+    <tr><td>Denmark</td><td>45</td></tr>
+    <tr><td>Egypt</td><td>20</td></tr>
+    <tr><td>France</td><td>33</td></tr>
+    <tr><td>Germany</td><td>49</td></tr>
+    <tr><td>Greece</td><td>30</td></tr>
+    <tr><td>Iraq</td><td>964</td></tr>
+    <tr><td>Ireland</td><td>353</td></tr>
+    <tr><td>Italy</td><td>39</td></tr>
+    <tr><td>Japan</td><td>81</td></tr>
+    <tr><td>Kuwait</td><td>965</td></tr>
+    <tr><td>Lebanon</td><td>961</td></tr>
+    <tr><td>Morocco</td><td>212</td></tr>
+    <tr><td>Netherlands</td><td>31</td></tr>
+    <tr><td>Norway</td><td>47</td></tr>
+    <tr><td>Oman</td><td>968</td></tr>
+    <tr><td>Palestine</td><td>972</td></tr>
+    <tr><td>Qatar</td><td>974</td></tr>
+    <tr><td>Saudi Arabia</td><td>966</td></tr>
+    <tr><td>Spain</td><td>34</td></tr>
+    <tr><td>Sweden</td><td>46</td></tr>
+    <tr><td>Syria</td><td>963</td></tr>
+    <tr><td>Turkey</td><td>90</td></tr>
+    <tr><td>U.A.E</td><td>971</td></tr>
+    <tr><td>United Kingdom</td><td>44</td></tr>
+    <tr><td>United States</td><td>1</td></tr>
+    <tr><td>Yemen</td><td>967</td></tr>   
+</table>   
+        <div class="container">
+        <ul>
+            <li>Please hang up and try again if your party does not answer within 30 seconds. Otherwise, you will be charged the basic cost of the call.</li>
+            <li>For countries not mentioned, please dial (0) for assistance.</li>
+            <li>To access an international direct line, dial (9 + 00 + Country Code + City Code + Number).</li>
+        </ul>
+    </div>
 <center>
-    <table border="0">
-      <tr>
-      <td align="center"><img border="1" src="Welcome.jpg " width="340px" height="627px"></td>
-      </tr>
-  </table>
-          </center>
+<div class="buttons">
+            <button onclick="window.location.href='https://toledohotel.github.io/Toledo-Hotel/Toledo%20Amman%20Hotel2021.html'">Main Page</button>
+        </center>
+        </div>
+    </div>
 </body>
-</html> 
+</html>
