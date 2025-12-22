@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fire Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=0T5tUm67eQ7eKDXMjK51uJ4xUpIgRNr4BMU2RBXcnkZ8Tw97Xk7CcvyV5cT7B3C7Hc1_sB0ZtqHzHQSybsuwZsEWPhv6q7_kXQK68Tf7ocqIe_ZK1AyB2wLGvXnGIE_P" charset="UTF-8"></script>
+     
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;background:#f5f6fa;color:#333}
+
+    /* Navbar */
+    header{
+      background:#fff;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 40px;
+      box-shadow:0 2px 8px rgba(0,0,0,.05)
+    }
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700}
+    nav a{margin-left:20px;text-decoration:none;color:#333;font-weight:500}
+
+    /* Hero Section */
+    .hero{
+      min-height:75vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#fff;
+      background:
+        linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+        url('./img/bg3.jpeg') center/cover no-repeat;
+    }
+    .hero h1{font-size:3rem;margin-bottom:10px}
+    .hero p{opacity:.9;margin-bottom:25px}
+    .hero button{
+      background:#ff9f1a;
+      border:none;
+      padding:12px 30px;
+      border-radius:30px;
+      font-size:1rem;
+      color:#fff;
+      cursor:pointer
+    }
+
+    /* Cards */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+      padding:60px
+    }
+    .card{
+      background:#fff;
+      border-radius:18px;
+      padding:40px 20px;
+      text-align:center;
+      box-shadow:0 10px 24px rgba(0,0,0,.12);
+      transition:.3s;
+      min-height:220px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center
+    }
+    .card:hover{transform:translateY(-6px)}
+    .icon{font-size:3rem;margin-bottom:15px}
+    .card h3{font-size:1rem}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .social-icons a {
+            font-size: 24px;
+            color: #555;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #007BFF;
+{
+    footer{text-align:center;padding:20px;color:#777;font-size:.9rem
+}
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Al-Balqa%27_Applied_University.jpg" 
+         alt="University Logo" alt="Al-Balqa Applied University Logo" style="height:40px;">
+</div>
+  <nav>
+    <a href="https://ctif.org/zh-hans/node/2018?utm_source=chatgpt.com">References</a>
+    <a href="about.html">About Us</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Fire Dashboard</h1>
+    <p>Fire Data Overview</p>
+    </div>
+</section>
+<section class="cards">
+  <a href="introduction.html"><div class="card"><div class="icon">👋</div><h3>Introduction</h3></div></a>
+  <a href="types_fires.html"><div class="card"><div class="icon">📄🔥</div><h3>Types of Fires</h3></div></a>
+   <a href="causes_fires.html"><div class="card"><div class="icon">⚡</div><h3>Causes of Fires</h3></div></a>
+  <a href="effects.html"><div class="card"><div class="icon">🔥</div><h3>Effects of Fires</h3></div></a>
+  <a href="prevention.html"><div class="card"><div class="icon">🧑‍🚒</div><h3>Fire Prevention</h3></div></a>
+  <a href="./statistics/index.html"><div class="card"><div class="icon">📊</div><h3>Statistics</h3></div></a>
+</section>
+
+<footer>
+         <div class="social-icons">
+            <a href=" "_blank"><i class="fab fa-facebook"></i></a>
+            <a href=" "_blank"><i class="fab fa-twitter"></i></a>
+            <a href=" " target="_blank"><i class="fab fa-instagram"></i></a>
+           <a href=" " target="_blank"><i class="fab fa-tiktok"></i></a>
+</div>
+</footer>
+<center>© 2025 Leen Barakat | All Rights Reserved
+</center>
+</body>
+</html>
