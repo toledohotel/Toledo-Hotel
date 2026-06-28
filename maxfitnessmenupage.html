@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy & Fresh Menu - منيو طازج وصحي</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cairo for Arabic, Inter for English -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                        },
+                        accent: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .english-font {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.05);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #16a34a;
+            border-radius: 10px;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-slate-900 dark:text-gray-100 min-h-screen pb-24">
+
+    <script>
+        // Database of 30+ items with bilingual fields, calories, protein, carbs, and tags
+        const menuItems = [
+            // --- FRIDGE SECTION (ثلاجة) ---
+            {
+                id: 1,
+                nameAr: "باستا (ثلاجة)",
+                nameEn: "Pasta (Fridge)",
+                category: "fridge",
+                price: 2,
+                calories: 380,
+                protein: 12,
+                carbs: 55,
+                fats: 8,
+                descAr: "باستا باردة ومنعشة مع الخضار الطازجة والصوص الخفيف المميز.",
+                descEn: "Chilled pasta salad tossed with fresh crisp vegetables and a light signatures vinaigrette.",
+                emoji: "🥗"
+            },
+            {
+                id: 2,
+                nameAr: "بروتين المراعي (ثلاجة)",
+                nameEn: "Almarai Protein Drink (Fridge)",
+                category: "fridge",
+                price: 2,
+                calories: 210,
+                protein: 30,
+                carbs: 15,
+                fats: 3,
+                descAr: "حليب بروتين المراعي المغذي والمنعش لنمو العضلات والاستشفاء.",
+                descEn: "Refreshing and nutritious Almarai high-protein milk drink, perfect for workout recovery.",
+                emoji: "🥛"
+            },
+            {
+                id: 3,
+                nameAr: "بودنج (ثلاجة)",
+                nameEn: "Pudding (Fridge)",
+                category: "fridge",
+                price: 2,
+                calories: 180,
+                protein: 8,
+                carbs: 22,
+                fats: 4,
+                descAr: "بودنج بارد شهي وقليل السعرات غني بالبروتين لتحلية صحية.",
+                descEn: "Creamy, chilled, low-calorie protein pudding. The perfect guilt-free treat.",
+                emoji: "🍮"
+            },
+            {
+                id: 4,
+                nameAr: "دجاج اكسترا (ثلاجة)",
+                nameEn: "Extra Chicken Cup (Fridge)",
+                category: "fridge",
+                price: 1,
+                calories: 220,
+                protein: 38,
+                carbs: 0,
+                fats: 4,
+                descAr: "قطع صدور دجاج مفرومة ومتبلة باردة لإضافتها كحصة بروتين إضافية لطبقك.",
+                descEn: "Chilled extra seasoned premium chicken breast cubes to fuel your daily protein intake.",
+                emoji: "🍗"
+            },
+            {
+                id: 5,
+                nameAr: "ساندوتش تونا (ثلاجة)",
+                nameEn: "Tuna Sandwich (Fridge)",
+                category: "fridge",
+                price: 2.5,
+                calories: 340,
+                protein: 26,
+                carbs: 38,
+                fats: 6,
+                descAr: "تونة خفيفة مخلوطة بالبهارات والمايونيز الدايت في خبز الشوفان الصحي.",
+                descEn: "Light, delicious tuna flakes seasoned in diet light mayo, served on healthy oat-bread.",
+                emoji: "🥪"
+            },
+            {
+                id: 6,
+                nameAr: "ساندوتش دجاج (ثلاجة)",
+                nameEn: "Chicken Sandwich (Fridge)",
+                category: "fridge",
+                price: 2.5,
+                calories: 390,
+                protein: 28,
+                carbs: 40,
+                fats: 7,
+                descAr: "صدر دجاج مشوي مبرد مع شرائح الطماطم والخس في خبز صحي متكامل.",
+                descEn: "Chilled tender grilled chicken breast with tomatoes and lettuce inside a whole-wheat bun.",
+                emoji: "🥪"
+            },
+            {
+                id: 7,
+                nameAr: "سلطة فواكه (ثلاجة)",
+                nameEn: "Fruit Salad (Fridge)",
+                category: "fridge",
+                price: 1.5,
+                calories: 130,
+                protein: 2,
+                carbs: 30,
+                fats: 0,
+                descAr: "مزيج طازج من الفواكه الموسمية المقطعة لمدك بالفيتامينات والنشاط.",
+                descEn: "A vibrant, refreshing mix of seasonal sliced fruits to keep you energized.",
+                emoji: "🍓"
+            },
+            {
+                id: 8,
+                nameAr: "صحن سلطة (ثلاجة)",
+                nameEn: "Salad Bowl (Fridge)",
+                category: "fridge",
+                price: 1.5,
+                calories: 120,
+                protein: 3,
+                carbs: 18,
+                fats: 2,
+                descAr: "سلطة خضراء غنية بالخضروات الورقية الطازجة تقدم مع صوص الليمون وزيت الزيتون.",
+                descEn: "Fresh garden salad bowl featuring crunchy greens, served with oil and lemon dressing.",
+                emoji: "🥗"
+            },
+            {
+                id: 9,
+                nameAr: "عصير اناناس (ثلاجة)",
+                nameEn: "Pineapple Juice (Fridge)",
+                category: "fridge",
+                price: 0.5,
+                calories: 140,
+                protein: 1,
+                carbs: 32,
+                fats: 0,
+                descAr: "عصير أناناس طازج ومبرد 100٪ بدون سكر مضاف لمذاق حلو طبيعي وصحي.",
+                descEn: "100% natural, chilled pineapple juice with zero added sugars. Sweet and tropical.",
+                emoji: "🍍"
+            },
+            {
+                id: 10,
+                nameAr: "عصير جوافة (ثلاجة)",
+                nameEn: "Guava Juice (Fridge)",
+                category: "fridge",
+                price: 0.5,
+                calories: 150,
+                protein: 2,
+                carbs: 34,
+                fats: 0,
+                descAr: "عصير جوافة طبيعي غني بفيتامين C لتقوية المناعة والانتعاش اليومي.",
+                descEn: "Rich, fresh guava juice packed with essential vitamins to boost immunity and hydration.",
+                emoji: "🍹"
+            },
+            {
+                id: 11,
+                nameAr: "عصير مانجا (ثلاجة)",
+                nameEn: "Mango Juice (Fridge)",
+                category: "fridge",
+                price: 0.5,
+                calories: 160,
+                protein: 1,
+                carbs: 38,
+                fats: 0,
+                descAr: "عصير مانجو استوائي مميز بقوام غني وحلاوة طبيعية تأسر الحواس.",
+                descEn: "Tropical cold premium mango juice. Rich, sweet, and incredibly smooth.",
+                emoji: "🥭"
+            },
+            {
+                id: 12,
+                nameAr: "علبة تمر (ثلاجة)",
+                nameEn: "Dates Box (Fridge)",
+                category: "fridge",
+                price: 0.5,
+                calories: 250,
+                protein: 3,
+                carbs: 60,
+                fats: 0,
+                descAr: "أفخر أنواع التمور  منتقاة بعناية لتقديم طاقة طبيعية سريعة.",
+                descEn: "Premium handpicked local dates, offering natural quick energy with pre-workout carbs.",
+                emoji: "🌴"
+            },
+            {
+                id: 13,
+                nameAr: "ماء صحة (ثلاجة)",
+                nameEn: "Mineral Water (Fridge)",
+                category: "fridge",
+                price: 0.5,
+                calories: 0,
+                protein: 0,
+                carbs: 0,
+                fats: 0,
+                descAr: "مياه معدنية باردة ونقية لترطيب مثالي طوال اليوم.",
+                descEn: "Pure chilled mineral water to keep you adequately hydrated.",
+                emoji: "💧"
+            },
+            {
+                id: 14,
+                nameAr: "مهلبية (ثلاجة)",
+                nameEn: "Mahalabia (Fridge)",
+                category: "fridge",
+                price: 1.5,
+                calories: 190,
+                protein: 5,
+                carbs: 28,
+                fats: 3,
+                descAr: "مهلبية حليب خفيفة معدة بطريقة تقليدية لذيذة مزينة بالفستق والهيل.",
+                descEn: "Traditional light milk Mahalabia pudding, delicately garnished with aromatic pistachios.",
+                emoji: "🥛"
+            },
+
+            // --- MENU SECTION (منيو ساخن ومجهز) ---
+            {
+                id: 15,
+                nameAr: "برغر دجاج دبل (منيو)",
+                nameEn: "Double Chicken Burger (Menu)",
+                category: "menu",
+                price: 0.0,
+                calories: 620,
+                protein: 48,
+                carbs: 45,
+                fats: 16,
+                descAr: "شريحتين من دجاج صدور الدجاج المشوي اللذيذ مع خس، طماطم، وصلصة خاصة خفيفة.",
+                descEn: "Two juicy flame-grilled chicken patties layered with crisp lettuce, fresh tomatoes, and diet signature sauce.",
+                emoji: "🍔"
+            },
+            {
+                id: 16,
+                nameAr: "برغر دجاج عادي (منيو)",
+                nameEn: "Regular Chicken Burger (Menu)",
+                category: "menu",
+                price: 4.5,
+                calories: 410,
+                protein: 26,
+                carbs: 42,
+                fats: 9,
+                descAr: "شريحة صدر دجاج مشوي غني بالبروتين يقدم في خبز البطاطس اللذيذ مع الخضار والصلصة.",
+                descEn: "Flame-grilled chicken breast patty served in fresh soft bread with crisp greens and light dressing.",
+                emoji: "🍔"
+            },
+            {
+                id: 17,
+                nameAr: "برغر لحمة دبل (منيو)",
+                nameEn: "Double Beef Burger (Menu)",
+                category: "menu",
+                price: 0.0,
+                calories: 680,
+                protein: 52,
+                carbs: 43,
+                fats: 22,
+                descAr: "شريحتين من اللحم البقري الطازج المشوي على اللهب مع الجبن قليل الدسم والخضار الطازجة.",
+                descEn: "Double flame-grilled lean beef patties layered with low-fat cheddar, lettuce, onions, and clean light sauce.",
+                emoji: "🍔"
+            },
+            {
+                id: 18,
+                nameAr: "برغر لحمة عادي (منيو)",
+                nameEn: "Regular Beef Burger (Menu)",
+                category: "menu",
+                price: 4.5,
+                calories: 450,
+                protein: 29,
+                carbs: 40,
+                fats: 12,
+                descAr: "شريحة واحدة من اللحم البقري الطازج خالي من الدهون مشوي بإتقان مع صوص البرغر الصحي.",
+                descEn: "A single juicy lean beef patty, flame-grilled and served with fresh lettuce, tomato slices, and low-cal burger sauce.",
+                emoji: "🍔"
+            },
+            {
+                id: 19,
+                nameAr: "دجاج بالزيتون (منيو)",
+                nameEn: "Chicken with Olives (Menu)",
+                category: "menu",
+                price: 3.9,
+                calories: 460,
+                protein: 38,
+                carbs: 12,
+                fats: 18,
+                descAr: "قطع دجاج مطهوة على الطريقة المتوسطية مع زيتون بري وصوص ليمون وثوم غني بالنكهة.",
+                descEn: "Savory Mediterranean-style chicken simmered with aromatic wild green olives, garlic, and freshly squeezed lemon juice.",
+                emoji: "🥘"
+            },
+            {
+                id: 20,
+                nameAr: "دجاج بالعسل (منيو)",
+                nameEn: "Honey Glazed Chicken (Menu)",
+                category: "menu",
+                price: 0.0,
+                calories: 490,
+                protein: 36,
+                carbs: 24,
+                fats: 10,
+                descAr: "صدور دجاج مشوية ومغطاة بصلصة العسل الطبيعي الحلوة والصويا الخفيفة لإعطاء مذاق آسيوي فريد.",
+                descEn: "Tender glazed chicken breasts brushed with organic honey and light soy blend for that sweet savory Asian kick.",
+                emoji: "🍯"
+            },
+            {
+                id: 21,
+                nameAr: "دجاج بالكريمة (منيو)",
+                nameEn: "Creamy Chicken (Menu)",
+                category: "menu",
+                price: 3.9,
+                calories: 520,
+                protein: 40,
+                carbs: 10,
+                fats: 22,
+                descAr: "صدور دجاج مطهوة ببطء في كريمة الطبخ قليلة الدسم مع الفطر الطازج والروزماري الساحر.",
+                descEn: "Succulent chicken breasts cooked in a rich, light low-fat culinary cream with fresh mushrooms and rosemary.",
+                emoji: "🍲"
+            },
+            {
+                id: 22,
+                nameAr: "دجاج شيش (منيو)",
+                nameEn: "Shish Tawook Chicken (Menu)",
+                category: "menu",
+                price: 3.9,
+                calories: 420,
+                protein: 42,
+                carbs: 8,
+                fats: 12,
+                descAr: "أسياخ الدجاج المتبلة بالزبادي والزعتر مشوية على الفحم وتقدم مع الخبز وصلصة الثومية الصحية.",
+                descEn: "Charcoal-grilled yogurt-marinated Shish Tawook skewers, served with warm flatbread and garlic sauce.",
+                emoji: "🍢"
+            },
+            {
+                id: 23,
+                nameAr: "سلطة سيزر دبل (منيو)",
+                nameEn: "Double Caesar Salad (Menu)",
+                category: "menu",
+                price: 0.0,
+                calories: 390,
+                protein: 38,
+                carbs: 14,
+                fats: 15,
+                descAr: "سلطة سيزر الكلاسيكية بضعف حصة الدجاج المشوي، جبن البارميزان، وصوص السيزر دايت اللذيذ.",
+                descEn: "Classic crisp Caesar salad loaded with a double portion of grilled chicken, parmesan, and baked oat croutons.",
+                emoji: "🥗"
+            },
+            {
+                id: 24,
+                nameAr: "سمك فيليه (منيو)",
+                nameEn: "Fish Fillet (Menu)",
+                category: "menu",
+                price: 3.9,
+                calories: 350,
+                protein: 34,
+                carbs: 10,
+                fats: 8,
+                descAr: "شريحة سمك فيليه مشوية بالفرن مع تتبيلة الأعشاب والليمون والثوم الشهية، خفيفة وصحية.",
+                descEn: "Tender, oven-baked white fish fillet seasoned with premium dill herbs, garlic, and fresh citrus lemon juice.",
+                emoji: "🐟"
+            },
+            {
+                id: 25,
+                nameAr: "شاورما دجاج (منيو)",
+                nameEn: "Chicken Shawarma (Menu)",
+                category: "menu",
+                price: 4.5,
+                calories: 380,
+                protein: 28,
+                carbs: 32,
+                fats: 10,
+                descAr: "شاورما دجاج محضرة بصدور دجاج متبلة خفيفة ملفوفة بخبز الصاج مع صوص ثوم دايت وخيار مخلل.",
+                descEn: "Shredded chicken breast shawarma wrapped in flatbread with diet garlic spread and light pickles.",
+                emoji: "🌯"
+            },
+            {
+                id: 26,
+                nameAr: "عدس (منيو)",
+                nameEn: "Lentil Soup (Menu)",
+                category: "menu",
+                price: 1,
+                calories: 180,
+                protein: 12,
+                carbs: 26,
+                fats: 2,
+                descAr: "شوربة العدس الأصفر الكلاسيكية دافئة وغنية بالألياف والمعادن مع الليمون وقطع الخبز المحمص بالفرن.",
+                descEn: "Classic comforting yellow lentil soup packed with plant fiber, served hot with baked bread croutons.",
+                emoji: "🥣"
+            },
+            {
+                id: 27,
+                nameAr: "فاهيتا (منيو)",
+                nameEn: "Chicken Fajita (Menu)",
+                category: "menu",
+                price: 3.9,
+                calories: 410,
+                protein: 35,
+                carbs: 20,
+                fats: 11,
+                descAr: "قطع دجاج مطهوة مع الفلفل الملون، البصل، وبهارات الفاهيتا المكسيكية الحارة المميزة.",
+                descEn: "Sizzling spiced chicken breast strips stir-fried with colorful bell peppers, sweet onions, and Mexican spices.",
+                emoji: "🌮"
+            },
+            {
+                id: 28,
+                nameAr: "كفتة بالطحينية (منيو)",
+                nameEn: "Kofta with Tahini (Menu)",
+                category: "menu",
+                price: 4.5,
+                calories: 540,
+                protein: 38,
+                carbs: 12,
+                fats: 28,
+                descAr: "كفتة لحم عجل مشوية ومطهية بصلصة الطحينية الدافئة والليمون مع اللوز والصنوبر.",
+                descEn: "Juicy minced lean beef kofta baked in rich warm tahini-lemon broth, topped with roasted almonds.",
+                emoji: "🥩"
+            },
+            {
+                id: 29,
+                nameAr: "واي بروتين عادي (منيو)",
+                nameEn: "Regular Whey Protein (Menu)",
+                category: "menu",
+                price: 0.0,
+                calories: 140,
+                protein: 25,
+                carbs: 3,
+                fats: 1,
+                descAr: "سكوب واي بروتين معزول سريع الامتصاص مخلوط بالماء البارد مثالي للعضلات بعد تمرين مكثف.",
+                descEn: "Fast-absorbing premium isolate whey protein scoop shaken with ice-cold water, perfect pre/post workout fuel.",
+                emoji: "🥤"
+            },
+            {
+                id: 30,
+                nameAr: "واي بروتين مع حليب (منيو)",
+                nameEn: "Whey Protein with Milk (Menu)",
+                category: "menu",
+                price: 0.0,
+                calories: 260,
+                protein: 33,
+                carbs: 15,
+                fats: 4,
+                descAr: "سكوب من الواي بروتين اللذيذ مخلوط مع الحليب قليل الدسم لمذاق كريمي وقيمة بروتينية أعلى.",
+                descEn: "Premium scoop of whey protein shaken with fresh low-fat milk for enhanced recovery and creamy taste.",
+                emoji: "🥤"
+            },
+            {
+                id: 31,
+                nameAr: "واي بروتين مع فواكه (منيو)",
+                nameEn: "Whey Protein with Fruits (Menu)",
+                category: "menu",
+                price: 3.0,
+                calories: 340,
+                protein: 34,
+                carbs: 38,
+                fats: 4,
+                descAr: "سموذي بروتين متكامل يحتوي على الواي بروتين مخفوقاً مع الفواكه المشكلة الطازجة كالفراولة والموز والمانجو.",
+                descEn: "The ultimate meal shake: high-quality whey protein blended with premium fresh strawberries, mango, and sweet bananas.",
+                emoji: "🥤"
+            },
+            {
+                id: 32,
+                nameAr: "باستا (منيو)",
+                nameEn: "Hot Pasta (Menu)",
+                category: "menu",
+                price: 20,
+                calories: 490,
+                protein: 22,
+                carbs: 72,
+                fats: 10,
+                descAr: "باستا إيطالية تقدم ساخنة مع اختيارك من صلصة الطماطم الحمراء الغنية بالأعشاب أو الصلصة الوردية الخفيفة.",
+                descEn: "Freshly prepared piping-hot Italian pasta cooked in premium rich herb marinara sauce or pink creamy base.",
+                emoji: "🍝"
+            }
+        ];
+    </script>
+
+    <script>
+        // Multi-language system configuration
+        const i18n = {
+            ar: {
+                title: "قائمة الطعام",
+                subtitle: "اكتشف تشكيلتنا الواسعة من الوجبات الطازجة، الغنية بالبروتين والمحضرة خصيصاً لأهدافك الصحية.",
+                searchPlaceholder: "ابحث عن صنفك المفضل...",
+                all: "الكل",
+                fridge: "قسم الثلاجة (جاهز وبارد) ❄️",
+                menu: "مطبخ المنيو (ساخن ومحضر) 🔥",
+                currency: "دينار أردني",
+                protein: "بروتين",
+                carbs: "كارب",
+                calories: "سعرة",
+                cartTitle: "سلة الطلبات",
+                cartEmpty: "سلتك فارغة حالياً. اضغط على أي صنف لإضافته!",
+                addToCart: "أضف للطلب",
+                checkout: "إرسال الطلب عبر الواتساب",
+                total: "الإجمالي",
+                itemsCount: "أصناف",
+                macrosSummary: "ملخص السعرات والماكروز في سلتك:",
+                whatsappMsgHeader: "مرحباً، أود تقديم طلب من المنيو الصحي:\n\n",
+                itemDetails: "تفاصيل المكونات والماكروز",
+                searchAlert: "لم يتم العثور على نتائج تطابق بحثك.",
+                back: "رجوع",
+                close: "إغلاق",
+                nutritionFacts: "القيم الغذائية المعتمدة (لكل حصة)",
+                fats: "دهون"
+            },
+            en: {
+                title: "MENU",
+                subtitle: "Discover our wide range of freshly prepared high-protein meals curated specifically for your fitness goals.",
+                searchPlaceholder: "Search for your favorite dish...",
+                all: "All Items",
+                fridge: "Fridge Section (Cold & Ready) ❄️",
+                menu: "Hot Kitchen Menu (Freshly Made) 🔥",
+                currency: "JD",
+                protein: "Protein",
+                carbs: "Carbs",
+                calories: "kcal",
+                cartTitle: "Your Order Cart",
+                cartEmpty: "Your cart is empty. Click any item's price or button to add!",
+                addToCart: "Add to Order",
+                checkout: "Send Order via WhatsApp",
+                total: "Total Amount",
+                itemsCount: "Items",
+                macrosSummary: "Total Macros & Calories in your cart:",
+                whatsappMsgHeader: "Hello, I would like to place an order from your healthy menu:\n\n",
+                itemDetails: "Ingredients & Macros Details",
+                searchAlert: "No results matched your search criteria.",
+                back: "Back",
+                close: "Close",
+                nutritionFacts: "Certified Nutrition Facts (Per Serving)",
+                fats: "Fats"
+            }
+        };
+
+        // Reactive Application State
+        let currentLang = 'ar';
+        let activeCategory = 'all';
+        let searchQuery = '';
+        let cart = [];
+        let selectedItemForModal = null;
+    </script>
+
+    <!-- Glassmorphism Sticky Navbar -->
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-sm border-b border-gray-100 dark:border-slate-800 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Brand Logo / Aesthetic -->
+            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary-600 to-green-400 flex items-center justify-center text-white shadow-md shadow-primary-500/20">
+                    <i class="fa-solid fa-leaf text-lg animate-pulse"></i>
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-lg sm:text-xl tracking-tight text-gray-900 dark:text-white leading-tight">
+                    <span class="text-blue-600 dark">MAX</span><span class="text-red-600">FITNESS </span>
+                    </h1>
+                    <p class="text-[10px] text-gray-400 dark:text-gray-500 font-semibold tracking-widest uppercase">تناول طعاما طازجا • عش حياة صحية
+</p>
+                </div>
+            </div>
+
+            <!-- Header Controls (Lang & Cart Icon Trigger) -->
+            <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                <!-- Theme Toggle Button -->
+                <button onclick="toggleTheme()" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-300 flex items-center justify-center hover:bg-gray-200 dark:hover:bg-slate-700 transition-all focus:outline-none" aria-label="Toggle Dark Mode">
+                    <i id="themeIcon" class="fa-solid fa-moon text-md"></i>
+                </button>
+
+                <!-- Bilingual Language Switcher Button -->
+            <!--    <button id="langButton" onclick="switchLanguage()" class="px-4 py-2 rounded-xl text-xs font-bold text-white bg-primary-600 hover:bg-primary-700 shadow-sm transition-all flex items-center gap-2 transform active:scale-95">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>English</span>
+                </button> --!>
+
+                <!-- Floating Mobile Cart Trigger -->
+                <button onclick="toggleCartDrawer(true)" class="relative p-3 rounded-full bg-emerald-50 dark:bg-slate-800 text-primary-600 dark:text-primary-400 hover:bg-emerald-100 dark:hover:bg-slate-700 transition-all flex md:hidden items-center justify-center">
+                    <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    <span id="cartCountBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center scale-90 hidden">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner with stats -->
+    <div class="bg-gradient-to-b from-emerald-50/50 via-white to-transparent dark:from-slate-900/40 dark:via-slate-950 dark:to-transparent pt-8 pb-4 px-4">
+        <div class="max-w-4xl mx-auto text-center space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-300 text-xs font-semibold">
+                <span class="flex h-2 w-2 rounded-full bg-primary-500"></span>
+                <span id="heroPromoTag">أكثر من ٣٠ خيار غذائي عالي الجودة</span>
+            </div>
+            <h2 id="mainTitle" class="text-2xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight">
+                المذاق الصحي الطازج
+            </h2>
+            <p id="mainSubtitle" class="text-sm sm:text-base text-gray-500 dark:text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+                اكتشف تشكيلتنا الواسعة من الوجبات الطازجة، الغنية بالبروتين والمحضرة خصيصاً لأهدافك الصحية.
+            </p>
+
+            <!-- Inline Nutri-stats bar -->
+            <div class="grid grid-cols-3 max-w-md mx-auto gap-2 bg-white dark:bg-slate-800/80 p-3 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700/50 text-xs text-gray-500 dark:text-gray-400">
+                <div class="flex flex-col items-center border-e border-gray-100 dark:border-slate-700">
+                    <span class="font-bold text-emerald-600 dark:text-emerald-400 text-sm">30+</span>
+                    <span id="statProtein">أصناف بروتينية</span>
+                </div>
+                <div class="flex flex-col items-center border-e border-gray-100 dark:border-slate-700">
+                    <span class="font-bold text-orange-500 text-sm">100%</span>
+                    <span id="statFresh">طازج يومياً</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="font-bold text-blue-500 text-sm">Healthy</span>
+                    <span id="statFit">رياضي وصحي</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Sub-Nav with Filters and Search Box -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+        <div class="flex flex-col md:flex-row gap-4 justify-between items-center bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700/50 mb-8">
+            <!-- Search Input -->
+            <div class="relative w-full md:w-80">
+                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none text-gray-400 dark:text-gray-500">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <input type="text" id="searchInput" oninput="handleSearch(this.value)" class="w-full bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-700 text-gray-900 dark:text-white text-sm rounded-xl focus:ring-primary-500 focus:border-primary-500 block ps-10 p-3 outline-none transition-all" placeholder="ابحث عن صنفك المفضل...">
+            </div>
+
+            <!-- Categories Toggles -->
+            <div class="flex space-x-2 rtl:space-x-reverse overflow-x-auto w-full md:w-auto no-scrollbar py-1">
+                <button onclick="setCategory('all')" id="btn-cat-all" class="px-5 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 shadow-sm active:scale-95 bg-primary-600 text-white">
+                    <i class="fa-solid fa-border-all me-1"></i> <span class="cat-label-all">الكل</span>
+                </button>
+                <button onclick="setCategory('fridge')" id="btn-cat-fridge" class="px-5 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 shadow-sm active:scale-95 bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-slate-900 dark:text-gray-300 dark:hover:bg-slate-750">
+                    <i class="fa-solid fa-snowflake me-1"></i> <span class="cat-label-fridge">قسم الثلاجة (بارد)</span>
+                </button>
+                <button onclick="setCategory('menu')" id="btn-cat-menu" class="px-5 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 shadow-sm active:scale-95 bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-slate-900 dark:text-gray-300 dark:hover:bg-slate-750">
+                    <i class="fa-solid fa-fire me-1"></i> <span class="cat-label-menu">مطبخ المنيو (ساخن)</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Responsive Menu Grid layout and Right hand cart container -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Left Side: Menu Grid (8 columns on lg) -->
+            <div class="lg:col-span-8 space-y-8">
+                <!-- Section Category Headers dynamically injected inside JS render -->
+                <div id="noResults" class="hidden text-center py-12 px-4 bg-white dark:bg-slate-850 rounded-2xl border border-dashed border-gray-200 dark:border-slate-700">
+                    <div class="text-4xl text-gray-300 dark:text-gray-600 mb-3"><i class="fa-regular fa-face-frown"></i></div>
+                    <p id="noResultsText" class="text-sm font-semibold text-gray-500 dark:text-gray-400">لم نجد ما تبحث عنه. حاول استخدام مصطلح آخر.</p>
+                </div>
+
+                <div id="itemsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Cards will be dynamically loaded via JS -->
+                </div>
+            </div>
+
+            <!-- Right Side: Order Summary Panel (4 columns on lg, hidden/absolute on smaller screens via custom slide-over drawer) -->
+            <aside id="cartDrawer" class="hidden md:block lg:col-span-4 fixed inset-0 md:relative md:inset-auto z-50 md:z-10 bg-black/50 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none transition-all duration-300">
+                <div class="absolute right-0 top-0 bottom-0 w-80 max-w-[90vw] md:w-full bg-white dark:bg-slate-800 md:rounded-2xl shadow-xl md:shadow-sm border-l md:border border-gray-100 dark:border-slate-700 flex flex-col h-full md:h-auto overflow-hidden">
+                    <!-- Cart Title Bar -->
+                    <div class="p-4 border-b border-gray-100 dark:border-slate-700 flex justify-between items-center bg-gray-50 dark:bg-slate-800/50">
+                        <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                            <i class="fa-solid fa-basket-shopping text-primary-600 text-lg"></i>
+                            <h3 id="cartTitleLabel" class="font-bold text-gray-900 dark:text-white">سلة الطلبات</h3>
+                        </div>
+                        <button onclick="toggleCartDrawer(false)" class="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-white md:hidden"><i class="fa-solid fa-xmark text-lg"></i></button>
+                    </div>
+
+                    <!-- Cart Scroll Container -->
+                    <div id="cartItemsContainer" class="flex-grow overflow-y-auto p-4 space-y-3 max-h-[50vh] min-h-[150px]">
+                        <!-- Populated by script -->
+                    </div>
+
+                    <!-- Cart Macros & Summary Total -->
+                    <div id="cartMeta" class="p-4 border-t border-gray-100 dark:border-slate-700 bg-gray-50 dark:bg-slate-800/80 space-y-3">
+                        <!-- Macros Total Dashboard -->
+                        <div class="bg-white dark:bg-slate-900 p-3 rounded-xl border border-gray-100 dark:border-slate-750 text-[11px] space-y-2">
+                            <p id="totalMacrosLabel" class="font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider">القيم الإجمالية لطلبك:</p>
+                            <div class="grid grid-cols-3 gap-1 text-center font-bold">
+                                <div class="bg-green-50 dark:bg-green-950/40 text-emerald-700 dark:text-emerald-400 p-1.5 rounded-lg">
+                                    <div id="cartTotalProtein">0g</div>
+                                    <div class="text-[9px] font-medium opacity-80" id="microP">بروتين</div>
+                                </div>
+                                <div class="bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400 p-1.5 rounded-lg">
+                                    <div id="cartTotalCarbs">0g</div>
+                                    <div class="text-[9px] font-medium opacity-80" id="microC">كارب</div>
+                                </div>
+                                <div class="bg-orange-50 dark:bg-orange-950/40 text-orange-700 dark:text-orange-400 p-1.5 rounded-lg">
+                                    <div id="cartTotalCalories">0</div>
+                                    <div class="text-[9px] font-medium opacity-80" id="microK">سعرة</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Price summary -->
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100 dark:border-slate-700">
+                            <span id="priceLabelTotal" class="text-sm font-bold text-gray-600 dark:text-gray-400">الإجمالي:</span>
+                            <span id="cartTotalPriceValue" class="text-lg font-black text-primary-600">0.00 د.أ</span>
+                        </div>
+
+                        <!-- Submit Buttons -->
+                        <button onclick="sendOrderToWhatsApp()" class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-lg shadow-primary-500/15 transform active:scale-95 transition-all">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span id="checkoutBtnLabel">إرسال الطلب عبر الواتساب</span>
+                        </button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Detailed Nutrition & Specs Modal -->
+    <div id="itemModal" class="fixed inset-0 z-50 hidden bg-black/60 flex items-center justify-center p-4 backdrop-blur-xs transition-opacity duration-300">
+        <div class="bg-white dark:bg-slate-850 rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-gray-100 dark:border-slate-700/50 transform scale-95 transition-transform duration-300">
+            <!-- Modal Header (Gradient and Image Placeholder) -->
+            <div id="modalHeaderBg" class="h-32 bg-gradient-to-r from-primary-600 to-green-500 flex items-end justify-between p-6 relative">
+                <button onclick="closeModal()" class="absolute top-4 right-4 bg-white/25 backdrop-blur-md text-white hover:bg-white/45 w-8 h-8 rounded-full flex items-center justify-center transition-all"><i class="fa-solid fa-xmark"></i></button>
+                <div class="text-5xl text-white transform translate-y-2" id="modalEmoji">🥦</div>
+                <span id="modalCategoryBadge" class="bg-white/95 text-emerald-800 text-[10px] font-bold px-3 py-1 rounded-full uppercase shadow-sm">FRIDGE</span>
+            </div>
+
+            <div class="p-6 space-y-6">
+                <!-- Title & Price -->
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h4 id="modalName" class="text-xl font-bold text-gray-900 dark:text-white">اسم الوجبة بالكامل</h4>
+                        <p id="modalSubName" class="text-xs text-gray-400 mt-1 dark:text-gray-500">English alternative subtitle</p>
+                    </div>
+                    <span id="modalPrice" class="text-2xl font-black text-primary-600">0.00 د.أ</span>
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <p id="modalDescription" class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed font-light">هذا النص يعبر عن الوصف الدقيق والصحي لمحتويات هذه الوجبة المتوازنة والمحضرة طازجة.</p>
+                </div>
+
+                <!-- Nutrition Dashboard -->
+                <div class="space-y-3">
+                    <h5 id="nutritionHeading" class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">القيم الغذائية المعتمدة (لكل حصة)</h5>
+                    <div class="grid grid-cols-4 gap-2 text-center text-xs">
+                        <div class="bg-orange-50 dark:bg-orange-950/20 p-2.5 rounded-2xl border border-orange-100/50 dark:border-orange-950">
+                            <span class="block text-lg font-black text-orange-600 dark:text-orange-400" id="modalCalories">380</span>
+                            <span id="modalCaloriesLabel" class="text-[9px] text-gray-400 block mt-0.5">سعرة</span>
+                        </div>
+                        <div class="bg-green-50 dark:bg-green-950/20 p-2.5 rounded-2xl border border-green-100/50 dark:border-green-950">
+                            <span class="block text-lg font-black text-emerald-600 dark:text-emerald-400" id="modalProtein">12g</span>
+                            <span id="modalProteinLabel" class="text-[9px] text-gray-400 block mt-0.5">بروتين</span>
+                        </div>
+                        <div class="bg-blue-50 dark:bg-blue-950/20 p-2.5 rounded-2xl border border-blue-100/50 dark:border-blue-950">
+                            <span class="block text-lg font-black text-blue-600 dark:text-blue-400" id="modalCarbs">55g</span>
+                            <span id="modalCarbsLabel" class="text-[9px] text-gray-400 block mt-0.5">كارب</span>
+                        </div>
+                        <div class="bg-red-50 dark:bg-red-950/20 p-2.5 rounded-2xl border border-red-100/50 dark:border-red-950">
+                            <span class="block text-lg font-black text-red-600 dark:text-red-400" id="modalFats">8g</span>
+                            <span id="modalFatsLabel" class="text-[9px] text-gray-400 block mt-0.5">دهون</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer button inside modal -->
+                <button id="modalActionBtn" class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2 transform active:scale-95 shadow-lg shadow-primary-500/20 transition-all">
+                    <i class="fa-solid fa-plus"></i> <span id="modalActionBtnLabel">إضافة للسلة</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Bottom Bar for Mobile Only to show aggregate total & trigger Cart Drawer -->
+    <div class="fixed bottom-0 inset-x-0 z-30 bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-slate-800 p-4 shadow-2xl flex md:hidden items-center justify-between">
+        <div>
+            <p id="bottomBarTotalLabel" class="text-[10px] text-gray-400 dark:text-gray-500 font-semibold uppercase tracking-wider">الإجمالي المستحق</p>
+            <span id="bottomBarTotalValue" class="text-lg font-black text-primary-600">0.00 ر.س</span>
+        </div>
+        <button onclick="toggleCartDrawer(true)" class="bg-primary-600 hover:bg-primary-700 text-white font-bold px-5 py-3 rounded-xl text-xs flex items-center gap-2 shadow-lg shadow-primary-500/20">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="bottomBarCountLabel">عرض السلة (0)</span>
+        </button>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-20 left-1/2 transform -translate-x-1/2 z-50 bg-slate-900 text-white dark:bg-white dark:text-slate-900 px-4 py-2.5 rounded-full shadow-xl text-xs font-semibold flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-green-500"></i>
+        <span id="toastMessage">تم الإضافة للسلة بنجاح</span>
+    </div>
+
+    <script>
+        // Set Default Themes & Theme Operations
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            document.getElementById('themeIcon').className = "fa-solid fa-sun text-md text-amber-400";
+        } else {
+            document.documentElement.classList.remove('dark');
+            document.getElementById('themeIcon').className = "fa-solid fa-moon text-md";
+        }
+
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.contains('dark');
+            if (isDark) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+                document.getElementById('themeIcon').className = "fa-solid fa-moon text-md";
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+                document.getElementById('themeIcon').className = "fa-solid fa-sun text-md text-amber-400";
+            }
+        }
+
+        // Apply visual updates of the Language
+        function updateUIStrings() {
+            const strings = i18n[currentLang];
+            const isAr = currentLang === 'ar';
+
+            // Change document direction and lang attribute
+            document.documentElement.dir = isAr ? 'rtl' : 'ltr';
+            document.documentElement.lang = currentLang;
+
+            // Header Elements and Hero titles
+            document.getElementById('mainTitle').innerText = strings.title;
+            document.getElementById('mainSubtitle').innerText = strings.subtitle;
+            document.getElementById('searchInput').placeholder = strings.searchPlaceholder;
+            document.getElementById('langButton').querySelector('span').innerText = isAr ? 'English' : 'العربية';
+            
+            // Filters and Sidebar labels
+            document.querySelectorAll('.cat-label-all').forEach(el => el.innerText = strings.all);
+            document.querySelectorAll('.cat-label-fridge').forEach(el => el.innerText = isAr ? "قسم الثلاجة ❄️" : "Fridge Section ❄️");
+            document.querySelectorAll('.cat-label-menu').forEach(el => el.innerText = isAr ? "مطبخ المنيو 🔥" : "Hot Menu 🔥");
+
+            // Hero Promotion stats labels
+            document.getElementById('heroPromoTag').innerText = isAr ? "أكثر من ٣٠ خيار غذائي عالي الجودة" : "30+ High Quality Food Options";
+            document.getElementById('statProtein').innerText = isAr ? "أصناف بروتينية" : "Protein Options";
+            document.getElementById('statFresh').innerText = isAr ? "طازج يومياً" : "Fresh Daily";
+            document.getElementById('statFit').innerText = isAr ? "رياضي وصحي" : "Healthy & Fit";
+
+            // Cart Summary panel
+            document.getElementById('cartTitleLabel').innerText = strings.cartTitle;
+            document.getElementById('totalMacrosLabel').innerText = strings.macrosSummary;
+            document.getElementById('checkoutBtnLabel').innerText = strings.checkout;
+            document.getElementById('priceLabelTotal').innerText = strings.total + ":";
+            document.getElementById('bottomBarTotalLabel').innerText = strings.total;
+
+            document.getElementById('microP').innerText = strings.protein;
+            document.getElementById('microC').innerText = strings.carbs;
+            document.getElementById('microK').innerText = strings.calories;
+
+            // Modal Static Labels
+            document.getElementById('nutritionHeading').innerText = strings.nutritionFacts;
+            document.getElementById('modalCaloriesLabel').innerText = strings.calories;
+            document.getElementById('modalProteinLabel').innerText = strings.protein;
+            document.getElementById('modalCarbsLabel').innerText = strings.carbs;
+            document.getElementById('modalFatsLabel').innerText = strings.fats;
+
+            // Force Re-render of lists with updated translation strings
+            renderMenuGrid();
+            renderCart();
+        }
+
+        // Function to Toggle between Languages
+        function switchLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            updateUIStrings();
+        }
+
+        // Apply Category Selection
+        function setCategory(category) {
+            activeCategory = category;
+            
+            // Highlight Selected Category button
+            const categories = ['all', 'fridge', 'menu'];
+            categories.forEach(cat => {
+                const button = document.getElementById(`btn-cat-${cat}`);
+                if (cat === category) {
+                    button.className = "px-5 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 shadow-sm active:scale-95 bg-primary-600 text-white";
+                } else {
+                    button.className = "px-5 py-2.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 shadow-sm active:scale-95 bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-slate-900 dark:text-gray-300 dark:hover:bg-slate-750";
+                }
+            });
+
+            renderMenuGrid();
+        }
+
+        // Search Handlers
+        function handleSearch(query) {
+            searchQuery = query.toLowerCase().trim();
+            renderMenuGrid();
+        }
+
+        // Render the Menu Grid items dynamically
+        function renderMenuGrid() {
+            const grid = document.getElementById('itemsGrid');
+            const noResults = document.getElementById('noResults');
+            const strings = i18n[currentLang];
+            const isAr = currentLang === 'ar';
+
+            grid.innerHTML = '';
+
+            // Filter menu items by active category and search input
+            const filtered = menuItems.filter(item => {
+                const matchesCategory = activeCategory === 'all' || item.category === activeCategory;
+                const matchesSearch = item.nameAr.toLowerCase().includes(searchQuery) || 
+                                      item.nameEn.toLowerCase().includes(searchQuery) ||
+                                      item.descAr.toLowerCase().includes(searchQuery) ||
+                                      item.descEn.toLowerCase().includes(searchQuery);
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                noResults.classList.remove('hidden');
+                document.getElementById('noResultsText').innerText = strings.searchAlert;
+            } else {
+                noResults.classList.add('hidden');
+            }
+
+            filtered.forEach(item => {
+                const title = isAr ? item.nameAr : item.nameEn;
+                const subTitle = isAr ? item.nameEn : item.nameAr;
+                const description = isAr ? item.descAr : item.descEn;
+                const priceText = `${item.price} ${strings.currency}`;
+
+                // Styled card template
+                const card = document.createElement('div');
+                card.className = "bg-white dark:bg-slate-800 rounded-3xl p-5 border border-gray-100 dark:border-slate-700/60 shadow-xs hover:shadow-xl hover:border-emerald-200 dark:hover:border-slate-600/60 transition-all duration-300 flex flex-col justify-between group cursor-pointer relative";
+                
+                // Add event listener to open modal on clicking the card (but avoid triggering on button click)
+                card.addEventListener('click', (e) => {
+                    if (!e.target.closest('.no-trigger-modal')) {
+                        openModal(item);
+                    }
+                });
+
+                card.innerHTML = `
+                    <div class="space-y-3">
+                        <!-- Top Row: Badge & Price Tag -->
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl select-none group-hover:scale-110 duration-200 transform transition-transform">${item.emoji}</span>
+                            <span class="text-sm px-3 py-1 rounded-full font-bold select-none ${item.category === 'fridge' ? 'bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-300' : 'bg-orange-50 text-orange-700 dark:bg-orange-950/40 dark:text-orange-300'} text-[10px] uppercase">
+                                ${item.category === 'fridge' ? '❄️ ' + (isAr ? 'ثلاجة' : 'Fridge') : '🔥 ' + (isAr ? 'منيو' : 'Menu')}
+                            </span>
+                        </div>
+
+                        <!-- Titles -->
+                        <div class="space-y-1">
+                            <h4 class="font-bold text-gray-950 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors text-base">${title}</h4>
+                            <p class="text-[11px] text-gray-400 dark:text-gray-500 font-light font-sans">${subTitle}</p>
+                        </div>
+
+                        <!-- Description -->
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed font-light line-clamp-2">${description}</p>
+                        
+                        <!-- Mini Nutrition Labels -->
+                        <div class="flex items-center gap-2 pt-1">
+                            <span class="text-[10px] bg-gray-50 dark:bg-slate-900 px-2 py-0.5 rounded-md text-gray-500 dark:text-gray-400"><strong class="font-bold text-primary-600">${item.protein}g</strong> ${strings.protein}</span>
+                            <span class="text-[10px] bg-gray-50 dark:bg-slate-900 px-2 py-0.5 rounded-md text-gray-500 dark:text-gray-400"><strong class="font-bold text-orange-500">${item.calories}</strong> ${strings.calories}</span>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Row: Price & Trigger Button -->
+                    <div class="flex items-center justify-between mt-5 pt-3 border-t border-gray-50 dark:border-slate-700/50">
+                        <div class="flex flex-col">
+                            <span class="text-xs text-gray-400">${isAr ? 'السعر' : 'Price'}</span>
+                            <span class="text-base font-black text-slate-950 dark:text-white">${priceText}</span>
+                        </div>
+                        <button onclick="addToCart(${item.id})" class="no-trigger-modal p-3 rounded-xl bg-primary-600 hover:bg-primary-700 text-white shadow-sm flex items-center justify-center transform active:scale-90 transition-all focus:outline-none" aria-label="Add to cart">
+                            <i class="fa-solid fa-plus text-xs"></i>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Cart Drawer Control
+        function toggleCartDrawer(isOpen) {
+            const drawer = document.getElementById('cartDrawer');
+            if (isOpen) {
+                drawer.classList.remove('hidden');
+                // Animation triggers
+                setTimeout(() => {
+                    drawer.classList.add('bg-black/50');
+                    drawer.querySelector('div').classList.remove('translate-x-full');
+                }, 50);
+            } else {
+                drawer.querySelector('div').classList.add('translate-x-full');
+                drawer.classList.remove('bg-black/50');
+                setTimeout(() => {
+                    drawer.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        // Cart Interaction Logic
+        function addToCart(itemId) {
+            const item = menuItems.find(p => p.id === itemId);
+            if (!item) return;
+
+            const existing = cart.find(c => c.itemId === itemId);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ itemId, quantity: 1 });
+            }
+
+            triggerToast(currentLang === 'ar' ? `تمت إضافة ${item.nameAr} للسلة` : `Added ${item.nameEn} to cart`);
+            renderCart();
+        }
+
+        function updateCartQty(itemId, offset) {
+            const index = cart.findIndex(c => c.itemId === itemId);
+            if (index === -1) return;
+
+            cart[index].quantity += offset;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            renderCart();
+        }
+
+        function triggerToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').innerText = message;
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            toast.classList.add('opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0', 'pointer-events-none');
+            }, 2500);
+        }
+
+        // Calculation and Rendering of the Cart Items
+        function renderCart() {
+            const container = document.getElementById('cartItemsContainer');
+            const strings = i18n[currentLang];
+            const isAr = currentLang === 'ar';
+
+            container.innerHTML = '';
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="h-full flex flex-col items-center justify-center text-center p-6 space-y-3">
+                        <div class="w-16 h-16 rounded-full bg-gray-50 dark:bg-slate-900 flex items-center justify-center text-gray-300 dark:text-gray-600">
+                            <i class="fa-solid fa-basket-shopping text-2xl"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 dark:text-gray-500 max-w-[200px] leading-relaxed">${strings.cartEmpty}</p>
+                    </div>
+                `;
+                document.getElementById('cartCountBadge').classList.add('hidden');
+                document.getElementById('bottomBarCountLabel').innerText = isAr ? 'عرض السلة (0)' : 'View Cart (0)';
+            } else {
+                let badgeCount = 0;
+                cart.forEach(cartItem => {
+                    const item = menuItems.find(p => p.id === cartItem.itemId);
+                    if (!item) return;
+
+                    badgeCount += cartItem.quantity;
+                    const title = isAr ? item.nameAr : item.nameEn;
+                    const priceText = `${(item.price * cartItem.quantity)} ${strings.currency}`;
+
+                    const row = document.createElement('div');
+                    row.className = "flex items-center justify-between p-3 rounded-2xl bg-gray-50 dark:bg-slate-900/60 border border-gray-100/50 dark:border-slate-750 text-xs transition-all";
+                    row.innerHTML = `
+                        <div class="flex items-center space-x-3 rtl:space-x-reverse min-w-0 flex-grow">
+                            <span class="text-xl select-none bg-white dark:bg-slate-800 p-1.5 rounded-lg shadow-xs">${item.emoji}</span>
+                            <div class="min-w-0">
+                                <h5 class="font-bold text-gray-900 dark:text-white truncate">${title}</h5>
+                                <span class="text-[10px] text-primary-600 font-bold">${priceText}</span>
+                            </div>
+                        </div>
+
+                        <!-- Quantity Selector Buttons -->
+                        <div class="flex items-center space-x-1.5 rtl:space-x-reverse">
+                            <button onclick="updateCartQty(${item.id}, -1)" class="w-7 h-7 rounded-lg bg-white dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-750 flex items-center justify-center border border-gray-100 dark:border-slate-700 text-gray-500 dark:text-gray-400 active:scale-90 duration-150 transform"><i class="fa-solid fa-minus text-[10px]"></i></button>
+                            <span class="w-6 text-center font-bold text-gray-900 dark:text-white">${cartItem.quantity}</span>
+                            <button onclick="updateCartQty(${item.id}, 1)" class="w-7 h-7 rounded-lg bg-white dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-750 flex items-center justify-center border border-gray-100 dark:border-slate-700 text-gray-500 dark:text-gray-400 active:scale-90 duration-150 transform"><i class="fa-solid fa-plus text-[10px]"></i></button>
+                        </div>
+                    `;
+                    container.appendChild(row);
+                });
+
+                document.getElementById('cartCountBadge').innerText = badgeCount;
+                document.getElementById('cartCountBadge').classList.remove('hidden');
+                document.getElementById('bottomBarCountLabel').innerText = isAr ? `عرض السلة (${badgeCount})` : `View Cart (${badgeCount})`;
+            }
+
+            // Recalculate Totals
+            calculateTotals();
+        }
+
+        // Aggregate Totals Calculation
+        function calculateTotals() {
+            let totalVal = 0;
+            let totalProtein = 0;
+            let totalCarbs = 0;
+            let totalCalories = 0;
+            const strings = i18n[currentLang];
+
+            cart.forEach(cartItem => {
+                const item = menuItems.find(p => p.id === cartItem.itemId);
+                if (!item) return;
+
+                totalVal += (item.price * cartItem.quantity);
+                totalProtein += (item.protein * cartItem.quantity);
+                totalCarbs += (item.carbs * cartItem.quantity);
+                totalCalories += (item.calories * cartItem.quantity);
+            });
+
+            const formattedPrice = `${totalVal.toFixed(2)} ${strings.currency}`;
+            document.getElementById('cartTotalPriceValue').innerText = formattedPrice;
+            document.getElementById('bottomBarTotalValue').innerText = formattedPrice;
+
+            document.getElementById('cartTotalProtein').innerText = `${totalProtein}g`;
+            document.getElementById('cartTotalCarbs').innerText = `${totalCarbs}g`;
+            document.getElementById('cartTotalCalories').innerText = totalCalories;
+        }
+
+        // Open Modal Details Panel
+        function openModal(item) {
+            selectedItemForModal = item;
+            const strings = i18n[currentLang];
+            const isAr = currentLang === 'ar';
+
+            document.getElementById('modalEmoji').innerText = item.emoji;
+            document.getElementById('modalName').innerText = isAr ? item.nameAr : item.nameEn;
+            document.getElementById('modalSubName').innerText = isAr ? item.nameEn : item.nameAr;
+            document.getElementById('modalPrice').innerText = `${item.price} ${strings.currency}`;
+            document.getElementById('modalDescription').innerText = isAr ? item.descAr : item.descEn;
+            document.getElementById('modalCalories').innerText = item.calories;
+            document.getElementById('modalProtein').innerText = `${item.protein}g`;
+            document.getElementById('modalCarbs').innerText = `${item.carbs}g`;
+            document.getElementById('modalFats').innerText = `${item.fats}g`;
+
+            // Badge Category Color
+            const badge = document.getElementById('modalCategoryBadge');
+            badge.innerText = item.category === 'fridge' ? (isAr ? '❄️ بارد' : '❄️ COLD') : (isAr ? '🔥 ساخن' : '🔥 HOT');
+            if (item.category === 'fridge') {
+                badge.className = "bg-blue-50 text-blue-800 text-[10px] font-bold px-3 py-1 rounded-full uppercase shadow-sm";
+            } else {
+                badge.className = "bg-orange-50 text-orange-800 text-[10px] font-bold px-3 py-1 rounded-full uppercase shadow-sm";
+            }
+
+            // Handle Modal CTA action
+            const actionBtn = document.getElementById('modalActionBtn');
+            actionBtn.onclick = () => {
+                addToCart(item.id);
+                closeModal();
+            };
+            document.getElementById('modalActionBtnLabel').innerText = strings.addToCart;
+
+            // Display Modal
+            const modal = document.getElementById('itemModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.add('opacity-100');
+                modal.querySelector('div').classList.remove('scale-95');
+            }, 50);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('itemModal');
+            modal.querySelector('div').classList.add('scale-95');
+            modal.classList.remove('opacity-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                selectedItemForModal = null;
+            }, 300);
+        }
+
+        // Dispatch Order direct to restaurant's WhatsApp phone (or simulated support)
+        function sendOrderToWhatsApp() {
+            if (cart.length === 0) {
+                triggerToast(currentLang === 'ar' ? "السلة فارغة، لا يوجد طلبات لإرسالها." : "Your cart is empty. Please add items.");
+                return;
+            }
+
+            const strings = i18n[currentLang];
+            const isAr = currentLang === 'ar';
+            let message = strings.whatsappMsgHeader;
+
+            let totalVal = 0;
+            let totalProtein = 0;
+            let totalCarbs = 0;
+            let totalCalories = 0;
+
+            cart.forEach((cartItem, idx) => {
+                const item = menuItems.find(p => p.id === cartItem.itemId);
+                if (!item) return;
+
+                const name = isAr ? item.nameAr : item.nameEn;
+                const cost = item.price * cartItem.quantity;
+                
+                totalVal += cost;
+                totalProtein += (item.protein * cartItem.quantity);
+                totalCarbs += (item.carbs * cartItem.quantity);
+                totalCalories += (item.calories * cartItem.quantity);
+
+                message += `${idx + 1}. *${name}* [x${cartItem.quantity}] - ${cost} ${strings.currency}\n`;
+            });
+
+            message += `\n----------------------------\n`;
+            message += `*${strings.total}:* ${totalVal.toFixed(2)} ${strings.currency}\n`;
+            message += `⚡ *${strings.protein}:* ${totalProtein}g | *Carbs:* ${totalCarbs}g | *${strings.calories}:* ${totalCalories} kcal\n`;
+            message += `\n_تم الإرسال من تطبيق المنيو الصحي_`;
+
+            // Encode string for WhatsApp
+            const encodedText = encodeURIComponent(message);
+            // Dynamic/Static Phone Number target (Insert restaurant's number here)
+            const phoneNumber = "962799648492"; 
+            
+            const url = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+            window.open(url, '_blank');
+        }
+
+        // Close modal or drawer on hitting escape keys
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                toggleCartDrawer(false);
+            }
+        });
+
+        // Initialize Menu View
+        window.onload = function() {
+            updateUIStrings();
+        };
+    </script>
+</body>
+</html>
